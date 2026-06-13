@@ -6,11 +6,88 @@
 <meta name="theme-color" content="#151020">
 <title>Marvel Doom Prep Tracker</title>
 <style>
-:root { --bg:#0f0d18; --panel:#1b1629; --panel2:#241d35; --text:#fbf8ff; --muted:#c9bfd9; --line:#4c3e66; --accent:#b28af7; --accent2:#d8c3ff; --good:#9ee6b5; --mid:#ffd886; --low:#b8b3c7; }
+:root { 
+  --bg:#f7f4fb; 
+  --panel:#ffffff; 
+  --panel2:#f0e9fb; 
+  --text:#251d34; 
+  --muted:#6f647d; 
+  --line:#d8cbea; 
+  --accent:#a678ef; 
+  --accent2:#7f4fd0; 
+  --good:#2f9e62; 
+  --mid:#b07a00; 
+  --low:#777084; 
+}
 *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);font-size:18px;padding-bottom:110px} 
-header{padding:28px 20px 18px;background:linear-gradient(180deg,#191426,#110f19);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:3} h1{font-size:34px;margin:0 0 10px} .sub{color:var(--muted);margin:0;line-height:1.35} .bar{height:14px;background:#33284b;border-radius:999px;margin:22px 0 10px;overflow:hidden} .bar span{display:block;height:100%;width:0%;background:var(--accent)} .stats{display:flex;justify-content:space-between;color:var(--muted)}
+header{padding:28px 20px 18px;background:#ffffff;(180deg,#191426,#110f19);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:3} h1{font-size:34px;margin:0 0 10px} .sub{color:var(--muted);margin:0;line-height:1.35} .bar{height:14px;background:#33284b;border-radius:999px;margin:22px 0 10px;overflow:hidden} .bar span{display:block;height:100%;width:0%;background:var(--accent)} .stats{display:flex;justify-content:space-between;color:var(--muted)}
 main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px} button,select,input{font:inherit;border-radius:22px;border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:14px 16px} .tab.active{background:var(--accent);color:#100b18;font-weight:800} input{width:100%;margin-bottom:14px} .note{color:var(--muted);font-size:16px;line-height:1.35;margin:6px 0 18px} 
-.card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18)} .card-top{display:flex;gap:12px;align-items:flex-start} .grow{flex:1} h2{font-size:21px;margin:0 0 5px} .card p{color:var(--muted);margin:0 0 10px;line-height:1.4} .watch{border-radius:50%;width:44px;height:44px;padding:0;font-weight:900;background:#161122} .watched .watch{background:var(--good);color:#07120b} .badge{font-size:13px;padding:7px 10px;border-radius:999px;border:1px solid var(--line);white-space:nowrap} .vital{background:#432334;color:#ffd7e6} .helpful{background:#44381e;color:#ffe5a6} .skippable{background:#2b2933;color:#d8d2e5} details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px} summary{color:var(--accent2);font-weight:750;cursor:pointer} h3{font-size:15px;margin:16px 0 8px;color:var(--accent2);text-transform:uppercase;letter-spacing:.04em} .chips{display:flex;flex-wrap:wrap;gap:8px} .chips span{background:#2a223d;color:var(--muted);padding:7px 9px;border-radius:999px;font-size:14px} .empty{text-align:center;color:var(--muted);padding:50px 10px} footer{position:fixed;left:0;right:0;bottom:0;background:rgba(15,13,24,.94);border-top:1px solid var(--line);padding:14px 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px;backdrop-filter:blur(10px)}
+.card{background:#ffffff;border:1px solid var(--line);border-radius:24px;padding:16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18)} .card-top{display:flex;gap:12px;align-items:flex-start} .grow{flex:1} h2{font-size:21px;margin:0 0 5px} .card p{color:var(--muted);margin:0 0 10px;line-height:1.4} .watch{border-radius:50%;width:44px;height:44px;padding:0;font-weight:900;background:#161122} .watched .watch{background:var(--good);color:#07120b} .badge{font-size:13px;padding:7px 10px;border-radius:999px;border:1px solid var(--line);white-space:nowrap} .vital{background:#432334;color:#ffd7e6} .helpful{background:#44381e;color:#ffe5a6} .skippable{background:#2b2933;color:#d8d2e5} details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px} summary{color:var(--accent2);font-weight:750;cursor:pointer} h3{font-size:15px;margin:16px 0 8px;color:var(--accent2);text-transform:uppercase;letter-spacing:.04em} .chips{display:flex;flex-wrap:wrap;gap:8px} .chips span{background:#2a223d;color:var(--muted);padding:7px 9px;border-radius:999px;font-size:14px} 
+.phase1{
+  color:#9c5cff;
+  font-weight:700;
+}
+
+.phase2{
+  color:#4f9fff;
+  font-weight:700;
+}
+
+.phase3{
+  color:#2ebf73;
+  font-weight:700;
+}
+
+.phase4{
+  color:#d9a500;
+  font-weight:700;
+}
+
+.phase5{
+  color:#f28c28;
+  font-weight:700;
+}
+
+.phase6{
+  color:#e05a7a;
+  font-weight:700;
+}
+.phase1-card{
+  background:#f3e8ff;
+  border-left:6px solid #c9a0ff;
+}
+
+.phase2-card{
+  background:#e8f4ff;
+  border-left:6px solid #7ab8ff;
+}
+
+.phase3-card{
+  background:#e8faef;
+  border-left:6px solid #7ee2a8;
+}
+
+.phase4-card{
+  background:#fff8dd;
+  border-left:6px solid #ffd76f;
+}
+
+.phase5-card{
+  background:#fff0e3;
+  border-left:6px solid #ffb26b;
+}
+
+.phase6-card{
+  background:#ffe8ee;
+  border-left:6px solid #ff7f7f;
+}
+.empty{text-align:center;color:var(--muted);padding:50px 10px} footer{position:fixed;left:0;right:0;bottom:0;background:rgba(15,13,24,.94);border-top:1px solid var(--line);padding:14px 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px;backdrop-filter:blur(10px)}
+.phase1{color:#c9a0ff;font-weight:700}
+.phase2{color:#7ab8ff;font-weight:700}
+.phase3{color:#7ee2a8;font-weight:700}
+.phase4{color:#ffd76f;font-weight:700}
+.phase5{color:#ffb26b;font-weight:700}
+.phase6{color:#ff7f7f;font-weight:700}
 @media(min-width:800px){body{max-width:860px;margin:auto} header{position:static}}
 </style>
 </head>
@@ -19,13 +96,29 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 <main>
 <div class="tabs"><button class="tab active" id="unwatchedTab">Unwatched</button><button class="tab" id="watchedTab">Watched</button></div>
 <input id="search" placeholder="Search titles or characters" autocomplete="off">
-<div class="filters"><select id="priority"><option>All priorities</option><option>Vital</option><option>Helpful</option><option>Skippable</option></select><select id="phase"><option>All phases</option><option>Phase 1</option><option>Phase 2</option><option>Phase 3</option><option>Phase 4</option><option>Phase 5</option><option>Phase 6</option></select></div>
+<div class="filters"><select id="priority"><option>All priorities</option><option>Vital</option><option>Helpful</option><option>Skippable</option></select><select id="phase">
+
+  <option>All phases</option>
+
+  <option value="Phase 1">🛠️ Origins & Heroes (P1)</option>
+
+  <option value="Phase 2">🌍 Building the Team (P2)</option>
+
+  <option value="Phase 3">💎 The Infinity Saga (P3)</option>
+
+  <option value="Phase 4">🌌 After Endgame (P4)</option>
+
+  <option value="Phase 5">🌀 Multiverse Madness (P5)</option>
+
+  <option value="Phase 6">👑 Doom Approaches (P6)</option>
+
+</select></div>
 <p class="note">Priority is a best-effort “will this help before Doom?” rating. Marvel may still throw a chair through the timeline, as is tradition.</p>
 <section id="list">
-<article class="card" data-id="0" data-title="iron man" data-chars="tony stark pepper potts james rhodes obadiah stane nick fury" data-priority="Helpful" data-phase="Phase 1" data-watched="false">
+<article class="card phase1-card" data-id="0" data-title="iron man" data-chars="tony stark pepper potts james rhodes obadiah stane nick fury" data-priority="Helpful" data-phase="Phase 1" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Iron Man watched">✓</button>
-    <div class="grow"><h2>Iron Man</h2><p>2008 · Film · Phase 1</p></div>
+    <div class="grow"><h2>Iron Man</h2><p>2008 · Film · <span class="phase1">🛠️ Origins & Heroes (P1)</span></p>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -34,10 +127,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Starts the MCU and Tony&#x27;s legacy, useful context for why Avengers stories keep orbiting Stark tech and consequences.</p>
   </details>
 </article>
-<article class="card" data-id="1" data-title="the incredible hulk" data-chars="bruce banner betty ross thaddeus ross emil blonsky" data-priority="Skippable" data-phase="Phase 1" data-watched="false">
+<article class="card phase1-card" data-id="1" data-title="the incredible hulk" data-chars="bruce banner betty ross thaddeus ross emil blonsky" data-priority="Skippable" data-phase="Phase 1" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark The Incredible Hulk watched">✓</button>
-    <div class="grow"><h2>The Incredible Hulk</h2><p>2008 · Film · Phase 1</p></div>
+    <div class="grow"><h2>The Incredible Hulk</h2><p>2008 · Film · <span class="phase1">🛠️ Origins & Heroes (P1)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -46,10 +139,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Useful for Hulk and Ross context, though much of it is reintroduced later.</p>
   </details>
 </article>
-<article class="card" data-id="2" data-title="iron man 2" data-chars="tony stark pepper potts james rhodes natasha romanoff nick fury justin hammer" data-priority="Helpful" data-phase="Phase 1" data-watched="false">
+<article class="card phase1-card" data-id="2" data-title="iron man 2" data-chars="tony stark pepper potts james rhodes natasha romanoff nick fury justin hammer" data-priority="Helpful" data-phase="Phase 1" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Iron Man 2 watched">✓</button>
-    <div class="grow"><h2>Iron Man 2</h2><p>2010 · Film · Phase 1</p></div>
+    <div class="grow"><h2>Iron Man 2</h2><p>2010 · Film · <span class="phase1">🛠️ Origins & Heroes (P1)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -58,10 +151,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Builds Tony, Rhodey, Natasha and SHIELD groundwork.</p>
   </details>
 </article>
-<article class="card" data-id="3" data-title="thor" data-chars="thor loki jane foster odin frigga heimdall clint barton" data-priority="Helpful" data-phase="Phase 1" data-watched="false">
+<article class="card phase1-card" data-id="3" data-title="thor" data-chars="thor loki jane foster odin frigga heimdall clint barton" data-priority="Helpful" data-phase="Phase 1" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Thor watched">✓</button>
-    <div class="grow"><h2>Thor</h2><p>2011 · Film · Phase 1</p></div>
+    <div class="grow"><h2>Thor</h2><p>2011 · Film · <span class="phase1">🛠️ Origins & Heroes (P1)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -70,10 +163,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Introduces Thor, Loki and cosmic mythology that keeps mattering.</p>
   </details>
 </article>
-<article class="card" data-id="4" data-title="captain america: the first avenger" data-chars="steve rogers peggy carter bucky barnes red skull howard stark" data-priority="Helpful" data-phase="Phase 1" data-watched="false">
+<article class="card phase1-card" data-id="4" data-title="captain america: the first avenger" data-chars="steve rogers peggy carter bucky barnes red skull howard stark" data-priority="Helpful" data-phase="Phase 1" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Captain America: The First Avenger watched">✓</button>
-    <div class="grow"><h2>Captain America: The First Avenger</h2><p>2011 · Film · Phase 1</p></div>
+    <div class="grow"><h2>Captain America: The First Avenger</h2><p>2011 · Film · <span class="phase1">🛠️ Origins & Heroes (P1)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -82,10 +175,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Sets up Steve, Bucky, HYDRA, the Tesseract and the old-school hero template.</p>
   </details>
 </article>
-<article class="card" data-id="5" data-title="the avengers" data-chars="tony stark steve rogers thor bruce banner natasha romanoff clint barton loki nick fury" data-priority="Vital" data-phase="Phase 1" data-watched="false">
+<article class="card phase1-card" data-id="5" data-title="the avengers" data-chars="tony stark steve rogers thor bruce banner natasha romanoff clint barton loki nick fury" data-priority="Vital" data-phase="Phase 1" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark The Avengers watched">✓</button>
-    <div class="grow"><h2>The Avengers</h2><p>2012 · Film · Phase 1</p></div>
+    <div class="grow"><h2>The Avengers</h2><p>2012 · Film · <span class="phase1">🛠️ Origins & Heroes (P1)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -94,10 +187,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>The Avengers become a team, and the wider MCU starts moving as one story.</p>
   </details>
 </article>
-<article class="card" data-id="6" data-title="iron man 3" data-chars="tony stark pepper potts james rhodes aldrich killian happy hogan" data-priority="Helpful" data-phase="Phase 2" data-watched="false">
+<article class="card phase2-card" data-id="6" data-title="iron man 3" data-chars="tony stark pepper potts james rhodes aldrich killian happy hogan" data-priority="Helpful" data-phase="Phase 2" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Iron Man 3 watched">✓</button>
-    <div class="grow"><h2>Iron Man 3</h2><p>2013 · Film · Phase 2</p></div>
+    <div class="grow"><h2>Iron Man 3</h2><p>2013 · Film · <span class="phase2">🌍 Building the Team (P2)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -106,10 +199,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Strong Tony character context and consequences from Avengers.</p>
   </details>
 </article>
-<article class="card" data-id="7" data-title="thor: the dark world" data-chars="thor loki jane foster frigga heimdall malekith" data-priority="Skippable" data-phase="Phase 2" data-watched="false">
+<article class="card phase2-card" data-id="7" data-title="thor: the dark world" data-chars="thor loki jane foster frigga heimdall malekith" data-priority="Skippable" data-phase="Phase 2" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Thor: The Dark World watched">✓</button>
-    <div class="grow"><h2>Thor: The Dark World</h2><p>2013 · Film · Phase 2</p></div>
+    <div class="grow"><h2>Thor: The Dark World</h2><p>2013 · Film · <span class="phase2">🌍 Building the Team (P2)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -118,10 +211,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>One object matters later, but the core plot is easy to catch up on.</p>
   </details>
 </article>
-<article class="card" data-id="8" data-title="captain america: the winter soldier" data-chars="steve rogers natasha romanoff bucky barnes sam wilson nick fury maria hill" data-priority="Vital" data-phase="Phase 2" data-watched="false">
+<article class="card phase2-card" data-id="8" data-title="captain america: the winter soldier" data-chars="steve rogers natasha romanoff bucky barnes sam wilson nick fury maria hill" data-priority="Vital" data-phase="Phase 2" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Captain America: The Winter Soldier watched">✓</button>
-    <div class="grow"><h2>Captain America: The Winter Soldier</h2><p>2014 · Film · Phase 2</p></div>
+    <div class="grow"><h2>Captain America: The Winter Soldier</h2><p>2014 · Film · <span class="phase2">🌍 Building the Team (P2)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -130,10 +223,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Major SHIELD/HYDRA fallout and key character relationships.</p>
   </details>
 </article>
-<article class="card" data-id="9" data-title="guardians of the galaxy" data-chars="peter quill gamora drax rocket groot ronan nebula thanos" data-priority="Helpful" data-phase="Phase 2" data-watched="false">
+<article class="card phase2-card" data-id="9" data-title="guardians of the galaxy" data-chars="peter quill gamora drax rocket groot ronan nebula thanos" data-priority="Helpful" data-phase="Phase 2" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Guardians of the Galaxy watched">✓</button>
-    <div class="grow"><h2>Guardians of the Galaxy</h2><p>2014 · Film · Phase 2</p></div>
+    <div class="grow"><h2>Guardians of the Galaxy</h2><p>2014 · Film · <span class="phase2">🌍 Building the Team (P2)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -142,10 +235,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Cosmic MCU, Infinity Stone context and Guardians intro.</p>
   </details>
 </article>
-<article class="card" data-id="10" data-title="avengers: age of ultron" data-chars="tony stark steve rogers thor bruce banner natasha romanoff clint barton wanda maximoff pietro maximoff vision ultron" data-priority="Vital" data-phase="Phase 2" data-watched="false">
+<article class="card phase2-card" data-id="10" data-title="avengers: age of ultron" data-chars="tony stark steve rogers thor bruce banner natasha romanoff clint barton wanda maximoff pietro maximoff vision ultron" data-priority="Vital" data-phase="Phase 2" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Avengers: Age of Ultron watched">✓</button>
-    <div class="grow"><h2>Avengers: Age of Ultron</h2><p>2015 · Film · Phase 2</p></div>
+    <div class="grow"><h2>Avengers: Age of Ultron</h2><p>2015 · Film · <span class="phase2">🌍 Building the Team (P2)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -154,10 +247,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Introduces Wanda and Vision and deepens the Avengers fracture.</p>
   </details>
 </article>
-<article class="card" data-id="11" data-title="ant-man" data-chars="scott lang hope van dyne hank pym cassie lang luis" data-priority="Helpful" data-phase="Phase 2" data-watched="false">
+<article class="card phase2-card" data-id="11" data-title="ant-man" data-chars="scott lang hope van dyne hank pym cassie lang luis" data-priority="Helpful" data-phase="Phase 2" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Ant-Man watched">✓</button>
-    <div class="grow"><h2>Ant-Man</h2><p>2015 · Film · Phase 2</p></div>
+    <div class="grow"><h2>Ant-Man</h2><p>2015 · Film · <span class="phase2">🌍 Building the Team (P2)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -166,10 +259,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Introduces Pym tech and the Ant-Man corner of the MCU.</p>
   </details>
 </article>
-<article class="card" data-id="12" data-title="captain america: civil war" data-chars="steve rogers tony stark bucky barnes natasha romanoff sam wilson wanda maximoff vision t&#x27;challa peter parker zemo" data-priority="Vital" data-phase="Phase 3" data-watched="false">
+<article class="card phase3-card" data-id="12" data-title="captain america: civil war" data-chars="steve rogers tony stark bucky barnes natasha romanoff sam wilson wanda maximoff vision t&#x27;challa peter parker zemo" data-priority="Vital" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Captain America: Civil War watched">✓</button>
-    <div class="grow"><h2>Captain America: Civil War</h2><p>2016 · Film · Phase 3</p></div>
+    <div class="grow"><h2>Captain America: Civil War</h2><p>2016 · Film · <span class="phase3">💎 The Infinity Saga (P3)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -178,10 +271,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Huge Avengers turning point and major introductions.</p>
   </details>
 </article>
-<article class="card" data-id="13" data-title="doctor strange" data-chars="stephen strange wong christine palmer the ancient one mordo kaecilius" data-priority="Vital" data-phase="Phase 3" data-watched="false">
+<article class="card phase3-card" data-id="13" data-title="doctor strange" data-chars="stephen strange wong christine palmer the ancient one mordo kaecilius" data-priority="Vital" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Doctor Strange watched">✓</button>
-    <div class="grow"><h2>Doctor Strange</h2><p>2016 · Film · Phase 3</p></div>
+    <div class="grow"><h2>Doctor Strange</h2><p>2016 · Film · <span class="phase3">💎 The Infinity Saga (P3)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -190,10 +283,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Introduces magic, the multiverse-adjacent rules and Doctor Strange.</p>
   </details>
 </article>
-<article class="card" data-id="14" data-title="guardians of the galaxy vol. 2" data-chars="peter quill gamora drax rocket groot nebula yondu mantis" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
+<article class="card phase3-card" data-id="14" data-title="guardians of the galaxy vol. 2" data-chars="peter quill gamora drax rocket groot nebula yondu mantis" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Guardians of the Galaxy Vol. 2 watched">✓</button>
-    <div class="grow"><h2>Guardians of the Galaxy Vol. 2</h2><p>2017 · Film · Phase 3</p></div>
+    <div class="grow"><h2>Guardians of the Galaxy Vol. 2</h2><p>2017 · Film · <span class="phase3">💎 The Infinity Saga (P3)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -202,10 +295,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Good Guardians and Nebula context before later team-ups.</p>
   </details>
 </article>
-<article class="card" data-id="15" data-title="spider-man: homecoming" data-chars="peter parker tony stark happy hogan may parker adrian toomes" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
+<article class="card phase3-card" data-id="15" data-title="spider-man: homecoming" data-chars="peter parker tony stark happy hogan may parker adrian toomes" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Spider-Man: Homecoming watched">✓</button>
-    <div class="grow"><h2>Spider-Man: Homecoming</h2><p>2017 · Film · Phase 3</p></div>
+    <div class="grow"><h2>Spider-Man: Homecoming</h2><p>2017 · Film · <span class="phase3">💎 The Infinity Saga (P3)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -214,10 +307,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Builds Peter and Tony&#x27;s mentor bond.</p>
   </details>
 </article>
-<article class="card" data-id="16" data-title="thor: ragnarok" data-chars="thor loki bruce banner valkyrie hela heimdall korg" data-priority="Vital" data-phase="Phase 3" data-watched="false">
+<article class="card phase3-card" data-id="16" data-title="thor: ragnarok" data-chars="thor loki bruce banner valkyrie hela heimdall korg" data-priority="Vital" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Thor: Ragnarok watched">✓</button>
-    <div class="grow"><h2>Thor: Ragnarok</h2><p>2017 · Film · Phase 3</p></div>
+    <div class="grow"><h2>Thor: Ragnarok</h2><p>2017 · Film · <span class="phase3">💎 The Infinity Saga (P3)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -226,10 +319,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Moves Thor, Hulk, Loki and Asgard into the Infinity War setup.</p>
   </details>
 </article>
-<article class="card" data-id="17" data-title="black panther" data-chars="t&#x27;challa shuri okoye nakia m&#x27;baku killmonger everett ross" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
+<article class="card phase3-card" data-id="17" data-title="black panther" data-chars="t&#x27;challa shuri okoye nakia m&#x27;baku killmonger everett ross" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Black Panther watched">✓</button>
-    <div class="grow"><h2>Black Panther</h2><p>2018 · Film · Phase 3</p></div>
+    <div class="grow"><h2>Black Panther</h2><p>2018 · Film · <span class="phase3">💎 The Infinity Saga (P3)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -238,10 +331,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Wakanda becomes important to the Avengers story.</p>
   </details>
 </article>
-<article class="card" data-id="18" data-title="avengers: infinity war" data-chars="the avengers guardians of the galaxy doctor strange spider-man black panther thanos" data-priority="Vital" data-phase="Phase 3" data-watched="false">
+<article class="card phase3-card" data-id="18" data-title="avengers: infinity war" data-chars="the avengers guardians of the galaxy doctor strange spider-man black panther thanos" data-priority="Vital" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Avengers: Infinity War watched">✓</button>
-    <div class="grow"><h2>Avengers: Infinity War</h2><p>2018 · Film · Phase 3</p></div>
+    <div class="grow"><h2>Avengers: Infinity War</h2><p>2018 · Film · <span class="phase3">💎 The Infinity Saga (P3)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -250,10 +343,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Essential Avengers and cosmic crossover story.</p>
   </details>
 </article>
-<article class="card" data-id="19" data-title="ant-man and the wasp" data-chars="scott lang hope van dyne hank pym janet van dyne cassie lang" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
+<article class="card phase3-card" data-id="19" data-title="ant-man and the wasp" data-chars="scott lang hope van dyne hank pym janet van dyne cassie lang" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Ant-Man and the Wasp watched">✓</button>
-    <div class="grow"><h2>Ant-Man and the Wasp</h2><p>2018 · Film · Phase 3</p></div>
+    <div class="grow"><h2>Ant-Man and the Wasp</h2><p>2018 · Film · <span class="phase3">💎 The Infinity Saga (P3)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -262,10 +355,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Quantum Realm context is handy for Endgame and later multiverse bits.</p>
   </details>
 </article>
-<article class="card" data-id="20" data-title="captain marvel" data-chars="carol danvers nick fury maria rambeau talos yon-rogg" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
+<article class="card phase3-card" data-id="20" data-title="captain marvel" data-chars="carol danvers nick fury maria rambeau talos yon-rogg" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Captain Marvel watched">✓</button>
-    <div class="grow"><h2>Captain Marvel</h2><p>2019 · Film · Phase 3</p></div>
+    <div class="grow"><h2>Captain Marvel</h2><p>2019 · Film · <span class="phase3">💎 The Infinity Saga (P3)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -274,10 +367,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Introduces Carol and younger Fury, useful for later cosmic stories.</p>
   </details>
 </article>
-<article class="card" data-id="21" data-title="avengers: endgame" data-chars="the avengers ant-man captain marvel nebula rocket thanos" data-priority="Vital" data-phase="Phase 3" data-watched="false">
+<article class="card phase3-card" data-id="21" data-title="avengers: endgame" data-chars="the avengers ant-man captain marvel nebula rocket thanos" data-priority="Vital" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Avengers: Endgame watched">✓</button>
-    <div class="grow"><h2>Avengers: Endgame</h2><p>2019 · Film · Phase 3</p></div>
+    <div class="grow"><h2>Avengers: Endgame</h2><p>2019 · Film · <span class="phase3">💎 The Infinity Saga (P3)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -286,10 +379,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Massive status quo reset. Absolutely core.</p>
   </details>
 </article>
-<article class="card" data-id="22" data-title="spider-man: far from home" data-chars="peter parker mj ned leeds nick fury quentin beck happy hogan" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
+<article class="card phase3-card" data-id="22" data-title="spider-man: far from home" data-chars="peter parker mj ned leeds nick fury quentin beck happy hogan" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Spider-Man: Far From Home watched">✓</button>
-    <div class="grow"><h2>Spider-Man: Far From Home</h2><p>2019 · Film · Phase 3</p></div>
+    <div class="grow"><h2>Spider-Man: Far From Home</h2><p>2019 · Film · <span class="phase3">💎 The Infinity Saga (P3)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -298,10 +391,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Shows the post-Endgame world and Peter&#x27;s place in it.</p>
   </details>
 </article>
-<article class="card" data-id="23" data-title="wandavision" data-chars="wanda maximoff vision agatha harkness monica rambeau jimmy woo darcy lewis" data-priority="Vital" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="23" data-title="wandavision" data-chars="wanda maximoff vision agatha harkness monica rambeau jimmy woo darcy lewis" data-priority="Vital" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark WandaVision watched">✓</button>
-    <div class="grow"><h2>WandaVision</h2><p>2021 · Series · Phase 4</p></div>
+    <div class="grow"><h2>WandaVision</h2><p>2021 · Series · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -310,10 +403,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Key Wanda, Vision, magic and grief context.</p>
   </details>
 </article>
-<article class="card" data-id="24" data-title="the falcon and the winter soldier" data-chars="sam wilson bucky barnes john walker sharon carter zemo isaiah bradley" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="24" data-title="the falcon and the winter soldier" data-chars="sam wilson bucky barnes john walker sharon carter zemo isaiah bradley" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark The Falcon and the Winter Soldier watched">✓</button>
-    <div class="grow"><h2>The Falcon and the Winter Soldier</h2><p>2021 · Series · Phase 4</p></div>
+    <div class="grow"><h2>The Falcon and the Winter Soldier</h2><p>2021 · Series · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -322,10 +415,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Important for Sam as Captain America and grounded MCU politics.</p>
   </details>
 </article>
-<article class="card" data-id="25" data-title="loki season 1" data-chars="loki mobius sylvie ravonna renslayer he who remains" data-priority="Vital" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="25" data-title="loki season 1" data-chars="loki mobius sylvie ravonna renslayer he who remains" data-priority="Vital" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Loki Season 1 watched">✓</button>
-    <div class="grow"><h2>Loki Season 1</h2><p>2021 · Series · Phase 4</p></div>
+    <div class="grow"><h2>Loki Season 1</h2><p>2021 · Series · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -334,10 +427,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Core multiverse and timeline setup.</p>
   </details>
 </article>
-<article class="card" data-id="26" data-title="black widow" data-chars="natasha romanoff yelena belova alexei shostakov melina vostokoff taskmaster" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="26" data-title="black widow" data-chars="natasha romanoff yelena belova alexei shostakov melina vostokoff taskmaster" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Black Widow watched">✓</button>
-    <div class="grow"><h2>Black Widow</h2><p>2021 · Film · Phase 4</p></div>
+    <div class="grow"><h2>Black Widow</h2><p>2021 · Film · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -346,10 +439,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Introduces Yelena and gives Natasha backstory.</p>
   </details>
 </article>
-<article class="card" data-id="27" data-title="what if...? season 1" data-chars="the watcher captain carter doctor strange supreme t&#x27;challa star-lord ultron variants" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="27" data-title="what if...? season 1" data-chars="the watcher captain carter doctor strange supreme t&#x27;challa star-lord ultron variants" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark What If...? Season 1 watched">✓</button>
-    <div class="grow"><h2>What If...? Season 1</h2><p>2021 · Animated Series · Phase 4</p></div>
+    <div class="grow"><h2>What If...? Season 1</h2><p>2021 · Animated Series · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -358,10 +451,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Helpful multiverse flavour, especially variants.</p>
   </details>
 </article>
-<article class="card" data-id="28" data-title="shang-chi and the legend of the ten rings" data-chars="shang-chi katy wenwu xialing wong trevor slattery" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="28" data-title="shang-chi and the legend of the ten rings" data-chars="shang-chi katy wenwu xialing wong trevor slattery" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Shang-Chi and the Legend of the Ten Rings watched">✓</button>
-    <div class="grow"><h2>Shang-Chi and the Legend of the Ten Rings</h2><p>2021 · Film · Phase 4</p></div>
+    <div class="grow"><h2>Shang-Chi and the Legend of the Ten Rings</h2><p>2021 · Film · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -370,10 +463,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Introduces Shang-Chi and mysterious powerful artefacts.</p>
   </details>
 </article>
-<article class="card" data-id="29" data-title="eternals" data-chars="sersi ikaris thena kingo phastos makkari druig ajak sprite gilgamesh" data-priority="Skippable" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="29" data-title="eternals" data-chars="sersi ikaris thena kingo phastos makkari druig ajak sprite gilgamesh" data-priority="Skippable" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Eternals watched">✓</button>
-    <div class="grow"><h2>Eternals</h2><p>2021 · Film · Phase 4</p></div>
+    <div class="grow"><h2>Eternals</h2><p>2021 · Film · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -382,10 +475,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Big cosmic lore, though currently quite separate.</p>
   </details>
 </article>
-<article class="card" data-id="30" data-title="hawkeye" data-chars="clint barton kate bishop yelena belova maya lopez wilson fisk" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="30" data-title="hawkeye" data-chars="clint barton kate bishop yelena belova maya lopez wilson fisk" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Hawkeye watched">✓</button>
-    <div class="grow"><h2>Hawkeye</h2><p>2021 · Series · Phase 4</p></div>
+    <div class="grow"><h2>Hawkeye</h2><p>2021 · Series · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -394,10 +487,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Introduces Kate and brings street-level threads forward.</p>
   </details>
 </article>
-<article class="card" data-id="31" data-title="spider-man: no way home" data-chars="peter parker doctor strange mj ned leeds multiverse visitors" data-priority="Vital" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="31" data-title="spider-man: no way home" data-chars="peter parker doctor strange mj ned leeds multiverse visitors" data-priority="Vital" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Spider-Man: No Way Home watched">✓</button>
-    <div class="grow"><h2>Spider-Man: No Way Home</h2><p>2021 · Film · Phase 4</p></div>
+    <div class="grow"><h2>Spider-Man: No Way Home</h2><p>2021 · Film · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -406,10 +499,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Major multiverse film with huge Peter/Strange consequences.</p>
   </details>
 </article>
-<article class="card" data-id="32" data-title="moon knight" data-chars="marc spector steven grant layla el-faouly khonshu arthur harrow" data-priority="Skippable" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="32" data-title="moon knight" data-chars="marc spector steven grant layla el-faouly khonshu arthur harrow" data-priority="Skippable" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Moon Knight watched">✓</button>
-    <div class="grow"><h2>Moon Knight</h2><p>2022 · Series · Phase 4</p></div>
+    <div class="grow"><h2>Moon Knight</h2><p>2022 · Series · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -418,10 +511,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Good standalone supernatural corner, limited Doom prep.</p>
   </details>
 </article>
-<article class="card" data-id="33" data-title="doctor strange in the multiverse of madness" data-chars="stephen strange wanda maximoff america chavez wong christine palmer" data-priority="Vital" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="33" data-title="doctor strange in the multiverse of madness" data-chars="stephen strange wanda maximoff america chavez wong christine palmer" data-priority="Vital" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Doctor Strange in the Multiverse of Madness watched">✓</button>
-    <div class="grow"><h2>Doctor Strange in the Multiverse of Madness</h2><p>2022 · Film · Phase 4</p></div>
+    <div class="grow"><h2>Doctor Strange in the Multiverse of Madness</h2><p>2022 · Film · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -430,10 +523,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Major multiverse, magic and Wanda continuation.</p>
   </details>
 </article>
-<article class="card" data-id="34" data-title="ms. marvel" data-chars="kamala khan bruno carrelli nakia bahadir muneeba khan kamran" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="34" data-title="ms. marvel" data-chars="kamala khan bruno carrelli nakia bahadir muneeba khan kamran" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Ms. Marvel watched">✓</button>
-    <div class="grow"><h2>Ms. Marvel</h2><p>2022 · Series · Phase 4</p></div>
+    <div class="grow"><h2>Ms. Marvel</h2><p>2022 · Series · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -442,10 +535,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Introduces Kamala, who matters for The Marvels and young hero threads.</p>
   </details>
 </article>
-<article class="card" data-id="35" data-title="thor: love and thunder" data-chars="thor jane foster valkyrie korg gorr" data-priority="Skippable" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="35" data-title="thor: love and thunder" data-chars="thor jane foster valkyrie korg gorr" data-priority="Skippable" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Thor: Love and Thunder watched">✓</button>
-    <div class="grow"><h2>Thor: Love and Thunder</h2><p>2022 · Film · Phase 4</p></div>
+    <div class="grow"><h2>Thor: Love and Thunder</h2><p>2022 · Film · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -454,10 +547,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Mostly Thor character continuation, limited multiverse/Doom setup.</p>
   </details>
 </article>
-<article class="card" data-id="36" data-title="i am groot season 1" data-chars="baby groot rocket" data-priority="Skippable" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="36" data-title="i am groot season 1" data-chars="baby groot rocket" data-priority="Skippable" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark I Am Groot Season 1 watched">✓</button>
-    <div class="grow"><h2>I Am Groot Season 1</h2><p>2022 · Shorts · Phase 4</p></div>
+    <div class="grow"><h2>I Am Groot Season 1</h2><p>2022 · Shorts · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -466,10 +559,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Adorable. Homework level: leaf.</p>
   </details>
 </article>
-<article class="card" data-id="37" data-title="she-hulk: attorney at law" data-chars="jennifer walters bruce banner wong matt murdock emil blonsky" data-priority="Skippable" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="37" data-title="she-hulk: attorney at law" data-chars="jennifer walters bruce banner wong matt murdock emil blonsky" data-priority="Skippable" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark She-Hulk: Attorney at Law watched">✓</button>
-    <div class="grow"><h2>She-Hulk: Attorney at Law</h2><p>2022 · Series · Phase 4</p></div>
+    <div class="grow"><h2>She-Hulk: Attorney at Law</h2><p>2022 · Series · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -478,10 +571,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Fun legal-comedy corner with some character links.</p>
   </details>
 </article>
-<article class="card" data-id="38" data-title="werewolf by night" data-chars="jack russell elsa bloodstone man-thing" data-priority="Skippable" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="38" data-title="werewolf by night" data-chars="jack russell elsa bloodstone man-thing" data-priority="Skippable" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Werewolf by Night watched">✓</button>
-    <div class="grow"><h2>Werewolf by Night</h2><p>2022 · Special · Phase 4</p></div>
+    <div class="grow"><h2>Werewolf by Night</h2><p>2022 · Special · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -490,10 +583,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Cool supernatural side story, little Doom prep.</p>
   </details>
 </article>
-<article class="card" data-id="39" data-title="black panther: wakanda forever" data-chars="shuri ramonda okoye nakia m&#x27;baku namor riri williams" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="39" data-title="black panther: wakanda forever" data-chars="shuri ramonda okoye nakia m&#x27;baku namor riri williams" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Black Panther: Wakanda Forever watched">✓</button>
-    <div class="grow"><h2>Black Panther: Wakanda Forever</h2><p>2022 · Film · Phase 4</p></div>
+    <div class="grow"><h2>Black Panther: Wakanda Forever</h2><p>2022 · Film · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -502,10 +595,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Important for Wakanda, Shuri and Riri.</p>
   </details>
 </article>
-<article class="card" data-id="40" data-title="the guardians of the galaxy holiday special" data-chars="drax mantis peter quill rocket groot nebula" data-priority="Skippable" data-phase="Phase 4" data-watched="false">
+<article class="card phase4-card" data-id="40" data-title="the guardians of the galaxy holiday special" data-chars="drax mantis peter quill rocket groot nebula" data-priority="Skippable" data-phase="Phase 4" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark The Guardians of the Galaxy Holiday Special watched">✓</button>
-    <div class="grow"><h2>The Guardians of the Galaxy Holiday Special</h2><p>2022 · Special · Phase 4</p></div>
+    <div class="grow"><h2>The Guardians of the Galaxy Holiday Special</h2><p>2022 · Special · <span class="phase4">🌌 After Endgame (P4)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -514,10 +607,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Lovely vibes, low plot necessity.</p>
   </details>
 </article>
-<article class="card" data-id="41" data-title="ant-man and the wasp: quantumania" data-chars="scott lang hope van dyne cassie lang janet van dyne hank pym kang" data-priority="Vital" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="41" data-title="ant-man and the wasp: quantumania" data-chars="scott lang hope van dyne cassie lang janet van dyne hank pym kang" data-priority="Vital" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Ant-Man and the Wasp: Quantumania watched">✓</button>
-    <div class="grow"><h2>Ant-Man and the Wasp: Quantumania</h2><p>2023 · Film · Phase 5</p></div>
+    <div class="grow"><h2>Ant-Man and the Wasp: Quantumania</h2><p>2023 · Film · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -526,10 +619,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Major multiverse saga context, even with changing MCU plans.</p>
   </details>
 </article>
-<article class="card" data-id="42" data-title="guardians of the galaxy vol. 3" data-chars="peter quill gamora drax rocket groot nebula mantis adam warlock" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="42" data-title="guardians of the galaxy vol. 3" data-chars="peter quill gamora drax rocket groot nebula mantis adam warlock" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Guardians of the Galaxy Vol. 3 watched">✓</button>
-    <div class="grow"><h2>Guardians of the Galaxy Vol. 3</h2><p>2023 · Film · Phase 5</p></div>
+    <div class="grow"><h2>Guardians of the Galaxy Vol. 3</h2><p>2023 · Film · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -538,10 +631,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Mostly wraps Guardians arcs, with some cosmic context.</p>
   </details>
 </article>
-<article class="card" data-id="43" data-title="secret invasion" data-chars="nick fury talos g&#x27;iah gravik maria hill james rhodes" data-priority="Skippable" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="43" data-title="secret invasion" data-chars="nick fury talos g&#x27;iah gravik maria hill james rhodes" data-priority="Skippable" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Secret Invasion watched">✓</button>
-    <div class="grow"><h2>Secret Invasion</h2><p>2023 · Series · Phase 5</p></div>
+    <div class="grow"><h2>Secret Invasion</h2><p>2023 · Series · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -550,10 +643,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>May matter for Fury/Rhodey threads, but unclear for Doom.</p>
   </details>
 </article>
-<article class="card" data-id="44" data-title="i am groot season 2" data-chars="baby groot" data-priority="Skippable" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="44" data-title="i am groot season 2" data-chars="baby groot" data-priority="Skippable" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark I Am Groot Season 2 watched">✓</button>
-    <div class="grow"><h2>I Am Groot Season 2</h2><p>2023 · Shorts · Phase 5</p></div>
+    <div class="grow"><h2>I Am Groot Season 2</h2><p>2023 · Shorts · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -562,10 +655,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Deeply optional, spiritually important to tree enjoyers.</p>
   </details>
 </article>
-<article class="card" data-id="45" data-title="loki season 2" data-chars="loki mobius sylvie ouroboros ravonna renslayer victor timely" data-priority="Vital" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="45" data-title="loki season 2" data-chars="loki mobius sylvie ouroboros ravonna renslayer victor timely" data-priority="Vital" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Loki Season 2 watched">✓</button>
-    <div class="grow"><h2>Loki Season 2</h2><p>2023 · Series · Phase 5</p></div>
+    <div class="grow"><h2>Loki Season 2</h2><p>2023 · Series · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -574,10 +667,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Probably the biggest multiverse homework after Endgame-era setup.</p>
   </details>
 </article>
-<article class="card" data-id="46" data-title="the marvels" data-chars="carol danvers monica rambeau kamala khan nick fury" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="46" data-title="the marvels" data-chars="carol danvers monica rambeau kamala khan nick fury" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark The Marvels watched">✓</button>
-    <div class="grow"><h2>The Marvels</h2><p>2023 · Film · Phase 5</p></div>
+    <div class="grow"><h2>The Marvels</h2><p>2023 · Film · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -586,10 +679,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Important for Monica, Kamala and cosmic/multiverse hints.</p>
   </details>
 </article>
-<article class="card" data-id="47" data-title="what if...? season 2" data-chars="the watcher captain carter kahhori doctor strange supreme hela variants" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="47" data-title="what if...? season 2" data-chars="the watcher captain carter kahhori doctor strange supreme hela variants" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark What If...? Season 2 watched">✓</button>
-    <div class="grow"><h2>What If...? Season 2</h2><p>2023 · Animated Series · Phase 5</p></div>
+    <div class="grow"><h2>What If...? Season 2</h2><p>2023 · Animated Series · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -598,10 +691,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Helpful variant and multiverse context.</p>
   </details>
 </article>
-<article class="card" data-id="48" data-title="echo" data-chars="maya lopez wilson fisk matt murdock" data-priority="Skippable" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="48" data-title="echo" data-chars="maya lopez wilson fisk matt murdock" data-priority="Skippable" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Echo watched">✓</button>
-    <div class="grow"><h2>Echo</h2><p>2024 · Series · Phase 5</p></div>
+    <div class="grow"><h2>Echo</h2><p>2024 · Series · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -610,10 +703,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Street-level thread, mostly separate from Doom prep.</p>
   </details>
 </article>
-<article class="card" data-id="49" data-title="x-men &#x27;97 season 1" data-chars="cyclops jean grey storm wolverine rogue magneto morph beast jubilee" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="49" data-title="x-men &#x27;97 season 1" data-chars="cyclops jean grey storm wolverine rogue magneto morph beast jubilee" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark X-Men &#x27;97 Season 1 watched">✓</button>
-    <div class="grow"><h2>X-Men &#x27;97 Season 1</h2><p>2024 · Animated Series · Phase 5</p></div>
+    <div class="grow"><h2>X-Men &#x27;97 Season 1</h2><p>2024 · Animated Series · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -622,10 +715,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Not main MCU Earth, but mutant awareness is increasingly relevant.</p>
   </details>
 </article>
-<article class="card" data-id="50" data-title="deadpool &amp; wolverine" data-chars="deadpool wolverine paradox cassandra nova tva characters" data-priority="Vital" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="50" data-title="deadpool &amp; wolverine" data-chars="deadpool wolverine paradox cassandra nova tva characters" data-priority="Vital" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Deadpool &amp; Wolverine watched">✓</button>
-    <div class="grow"><h2>Deadpool &amp; Wolverine</h2><p>2024 · Film · Phase 5</p></div>
+    <div class="grow"><h2>Deadpool &amp; Wolverine</h2><p>2024 · Film · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -634,10 +727,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Big multiverse/TVA/X-Men bridge.</p>
   </details>
 </article>
-<article class="card" data-id="51" data-title="agatha all along" data-chars="agatha harkness billy maximoff rio vidal lilia calderu jennifer kale" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="51" data-title="agatha all along" data-chars="agatha harkness billy maximoff rio vidal lilia calderu jennifer kale" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Agatha All Along watched">✓</button>
-    <div class="grow"><h2>Agatha All Along</h2><p>2024 · Series · Phase 5</p></div>
+    <div class="grow"><h2>Agatha All Along</h2><p>2024 · Series · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -646,10 +739,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Useful WandaVision/magic/Wiccan context.</p>
   </details>
 </article>
-<article class="card" data-id="52" data-title="what if...? season 3" data-chars="the watcher captain carter various variants" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="52" data-title="what if...? season 3" data-chars="the watcher captain carter various variants" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark What If...? Season 3 watched">✓</button>
-    <div class="grow"><h2>What If...? Season 3</h2><p>2024 · Animated Series · Phase 5</p></div>
+    <div class="grow"><h2>What If...? Season 3</h2><p>2024 · Animated Series · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -658,10 +751,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Variant practice. Helpful, likely not essential.</p>
   </details>
 </article>
-<article class="card" data-id="53" data-title="captain america: brave new world" data-chars="sam wilson thaddeus ross joaquin torres isaiah bradley samuel sterns" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="53" data-title="captain america: brave new world" data-chars="sam wilson thaddeus ross joaquin torres isaiah bradley samuel sterns" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Captain America: Brave New World watched">✓</button>
-    <div class="grow"><h2>Captain America: Brave New World</h2><p>2025 · Film · Phase 5</p></div>
+    <div class="grow"><h2>Captain America: Brave New World</h2><p>2025 · Film · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -670,10 +763,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Important for the current Avengers-era political landscape.</p>
   </details>
 </article>
-<article class="card" data-id="54" data-title="daredevil: born again season 1" data-chars="matt murdock wilson fisk frank castle karen page foggy nelson" data-priority="Skippable" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="54" data-title="daredevil: born again season 1" data-chars="matt murdock wilson fisk frank castle karen page foggy nelson" data-priority="Skippable" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Daredevil: Born Again Season 1 watched">✓</button>
-    <div class="grow"><h2>Daredevil: Born Again Season 1</h2><p>2025 · Series · Phase 5</p></div>
+    <div class="grow"><h2>Daredevil: Born Again Season 1</h2><p>2025 · Series · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -682,10 +775,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Street-level, excellent context if Marvel pulls those characters wider.</p>
   </details>
 </article>
-<article class="card" data-id="55" data-title="thunderbolts*" data-chars="yelena belova bucky barnes john walker red guardian ghost taskmaster valentina allegra de fontaine" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="55" data-title="thunderbolts*" data-chars="yelena belova bucky barnes john walker red guardian ghost taskmaster valentina allegra de fontaine" data-priority="Helpful" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Thunderbolts* watched">✓</button>
-    <div class="grow"><h2>Thunderbolts*</h2><p>2025 · Film · Phase 5</p></div>
+    <div class="grow"><h2>Thunderbolts*</h2><p>2025 · Film · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
@@ -694,10 +787,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Likely useful for the next team-based MCU era.</p>
   </details>
 </article>
-<article class="card" data-id="56" data-title="ironheart" data-chars="riri williams parker robbins natalie washington" data-priority="Skippable" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-id="56" data-title="ironheart" data-chars="riri williams parker robbins natalie washington" data-priority="Skippable" data-phase="Phase 5" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Ironheart watched">✓</button>
-    <div class="grow"><h2>Ironheart</h2><p>2025 · Series · Phase 5</p></div>
+    <div class="grow"><h2>Ironheart</h2><p>2025 · Series · <span class="phase5">🌀 Multiverse Madness (P5)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -706,10 +799,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Stark-tech legacy vibes, current Doom relevance unclear.</p>
   </details>
 </article>
-<article class="card" data-id="57" data-title="the fantastic four: first steps" data-chars="reed richards sue storm johnny storm ben grimm galactus silver surfer" data-priority="Vital" data-phase="Phase 6" data-watched="false">
+<article class="card phase6-card" data-id="57" data-title="the fantastic four: first steps" data-chars="reed richards sue storm johnny storm ben grimm galactus silver surfer" data-priority="Vital" data-phase="Phase 6" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark The Fantastic Four: First Steps watched">✓</button>
-    <div class="grow"><h2>The Fantastic Four: First Steps</h2><p>2025 · Film · Phase 6</p></div>
+    <div class="grow"><h2>The Fantastic Four: First Steps</h2><p>2025 · Film · <span class="phase6">👑 Doom Approaches (P6)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
@@ -718,10 +811,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Fantastic Four context is highly likely to matter before Doom.</p>
   </details>
 </article>
-<article class="card" data-id="58" data-title="eyes of wakanda" data-chars="wakandan warriors" data-priority="Skippable" data-phase="Phase 6" data-watched="false">
+<article class="card phase6-card" data-id="58" data-title="eyes of wakanda" data-chars="wakandan warriors" data-priority="Skippable" data-phase="Phase 6" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Eyes of Wakanda watched">✓</button>
-    <div class="grow"><h2>Eyes of Wakanda</h2><p>2025 · Animated Series · Phase 6</p></div>
+    <div class="grow"><h2>Eyes of Wakanda</h2><p>2025 · Animated Series · <span class="phase6">👑 Doom Approaches (P6)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -730,10 +823,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Interesting lore, probably optional for Doom.</p>
   </details>
 </article>
-<article class="card" data-id="59" data-title="marvel zombies" data-chars="surviving mcu variants zombie variants" data-priority="Skippable" data-phase="Phase 6" data-watched="false">
+<article class="card phase6-card" data-id="59" data-title="marvel zombies" data-chars="surviving mcu variants zombie variants" data-priority="Skippable" data-phase="Phase 6" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Marvel Zombies watched">✓</button>
-    <div class="grow"><h2>Marvel Zombies</h2><p>2025 · Animated Series · Phase 6</p></div>
+    <div class="grow"><h2>Marvel Zombies</h2><p>2025 · Animated Series · <span class="phase6">👑 Doom Approaches (P6)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -742,10 +835,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Multiverse adjacent, but likely optional.</p>
   </details>
 </article>
-<article class="card" data-id="60" data-title="wonder man" data-chars="simon williams trevor slattery" data-priority="Skippable" data-phase="Phase 6" data-watched="false">
+<article class="card phase6-card" data-id="60" data-title="wonder man" data-chars="simon williams trevor slattery" data-priority="Skippable" data-phase="Phase 6" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Wonder Man watched">✓</button>
-    <div class="grow"><h2>Wonder Man</h2><p>2025 · Series · Phase 6</p></div>
+    <div class="grow"><h2>Wonder Man</h2><p>2025 · Series · <span class="phase6">👑 Doom Approaches (P6)</span></p></div>
     <span class="badge skippable">Skippable</span>
   </div>
   <details><summary>Details</summary>
@@ -754,10 +847,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Likely fun industry satire corner, unclear Doom relevance.</p>
   </details>
 </article>
-<article class="card" data-id="61" data-title="spider-man: brand new day" data-chars="peter parker" data-priority="Vital" data-phase="Phase 6" data-watched="false">
+<article class="card phase6-card" data-id="61" data-title="spider-man: brand new day" data-chars="peter parker" data-priority="Vital" data-phase="Phase 6" data-watched="false">
   <div class="card-top">
     <button class="watch" aria-label="Mark Spider-Man: Brand New Day watched">✓</button>
-    <div class="grow"><h2>Spider-Man: Brand New Day</h2><p>2026 · Film · Phase 6</p></div>
+    <div class="grow"><h2>Spider-Man: Brand New Day</h2><p>2026 · Film · <span class="phase6">👑 Doom Approaches (P6)</span></p></div>
     <span class="badge vital">Vital</span>
   </div>
   <details><summary>Details</summary>
