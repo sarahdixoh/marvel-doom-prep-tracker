@@ -62,7 +62,45 @@ header{padding:28px 20px 18px;background:#ffffff;(180deg,#191426,#110f19);border
 }
 main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
 .three-tabs{grid-template-columns:1fr 1fr 1fr} button,select,input{font:inherit;border-radius:22px;border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:14px 16px} .tab.active{background:var(--accent);color:#100b18;font-weight:800} input{width:100%;margin-bottom:14px} .note{color:var(--muted);font-size:16px;line-height:1.35;margin:6px 0 18px} 
-.card{background:#ffffff;border:1px solid var(--line);border-radius:24px;padding:16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18)} .card-top{display:flex;gap:12px;align-items:flex-start} .grow{flex:1} h2{font-size:21px;margin:0 0 5px} .card p{color:var(--muted);margin:0 0 10px;line-height:1.4} .actions{display:flex;flex-direction:column;gap:8px}
+.card{background:#ffffff;border:1px solid var(--line);border-radius:24px;padding:16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18)} .card-top{display:flex;gap:12px;align-items:flex-start} 
+.poster-thumb{
+
+  width:64px;
+
+  aspect-ratio:2/3;
+
+  object-fit:cover;
+
+  border-radius:12px;
+
+  border:1px solid var(--line);
+
+  box-shadow:0 6px 16px rgba(0,0,0,.18);
+
+  flex-shrink:0;
+
+}
+
+.poster-large{
+
+  width:150px;
+
+  aspect-ratio:2/3;
+
+  object-fit:cover;
+
+  border-radius:16px;
+
+  border:1px solid var(--line);
+
+  box-shadow:0 8px 22px rgba(0,0,0,.18);
+
+  float:right;
+
+  margin:0 0 16px 20px;
+
+}
+.grow{flex:1} h2{font-size:21px;margin:0 0 5px} .card p{color:var(--muted);margin:0 0 10px;line-height:1.4} .actions{display:flex;flex-direction:column;gap:8px}
 .watch,.skip{border-radius:50%;width:44px;height:44px;padding:0;font-weight:900;background:#161122;color:#f7f4fb}
 .skip{
   font-size:22px;
@@ -164,6 +202,23 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     grid-template-columns:1fr;
 
   }
+  .poster-thumb{
+
+  width:56px;
+
+}
+
+.poster-large{
+
+  float:none;
+
+  display:block;
+
+  width:130px;
+
+  margin:0 0 16px 0;
+
+}
 }
 </style>
 </head>
@@ -202,10 +257,12 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 <section id="list">
 <article class="card phase1-card" data-runtime="126" data-id="0" data-title="iron man" data-chars="tony stark pepper potts james rhodes obadiah stane nick fury" data-priority="Helpful" data-phase="Phase 1" data-watched="false">  <div class="card-top">
     <div class="actions"><button class="watch" aria-label="Mark Iron Man watched">✓</button><button class="skip" aria-label="Skip title">⏭️</button></div>
+    <img class="poster-thumb" src="posters/iron-man.webp" alt="Iron Man poster">
     <div class="grow"><h2>Iron Man</h2><p>2008 · Film · <span class="phase1">🛠️ Origins & Heroes (P1)</span></p></div>
     <span class="badge helpful">Helpful</span>
   </div>
   <details><summary>Details</summary>
+    <img class="poster-large" src="posters/iron-man.webp" alt="Iron Man poster">
     <h3>Characters</h3><div class="chips"><span>Tony Stark</span><span>Pepper Potts</span><span>James Rhodes</span><span>Obadiah Stane</span><span>Nick Fury</span></div>
     <h3>Non-spoilery summary</h3><p>A brilliant weapons designer is forced to rethink his life after a crisis pushes him to build something extraordinary.</p>
     <h3>Doom prep note</h3><p>Starts the MCU and Tony&#x27;s legacy, useful context for why Avengers stories keep orbiting Stark tech and consequences.</p>
