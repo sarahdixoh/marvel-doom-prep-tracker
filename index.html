@@ -62,7 +62,7 @@ h1{font-size:34px;margin:0 0 10px} .sub{color:var(--muted);margin:0;line-height:
 
 }
 main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
-.three-tabs{grid-template-columns:1fr 1fr 1fr} button,select,input{font:inherit;border-radius:22px;border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:14px 16px} .tab.active{background:var(--accent);color:#100b18;font-weight:800} input{width:100%;margin-bottom:14px} .note{color:var(--muted);font-size:16px;line-height:1.35;margin:6px 0 18px} 
+.four-tabs{grid-template-columns:1fr 1fr 1fr 1fr} button,select,input{font:inherit;border-radius:22px;border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:14px 16px} .tab.active{background:var(--accent);color:#100b18;font-weight:800} input{width:100%;margin-bottom:14px} .note{color:var(--muted);font-size:16px;line-height:1.35;margin:6px 0 18px} 
 .card{background:#ffffff;border:1px solid var(--line);border-radius:24px;padding:16px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18)} .card-top{display:flex;gap:12px;align-items:flex-start} 
 .poster-thumb{
 
@@ -100,6 +100,57 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
   margin:0 0 16px 20px;
 
+}
+.character-card{
+  background:#ffffff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:20px;
+  margin:14px 0;
+}
+
+.character-images{
+  display:flex;
+  gap:12px;
+  margin:18px 0;
+}
+
+.character-images img{
+  width:110px;
+  height:165px;
+  object-fit:cover;
+  border-radius:18px;
+  border:1px solid var(--line);
+}
+.character-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:14px 0;
+}
+.character-nav-section{
+  margin-bottom:22px;
+}
+
+.character-nav-section h3{
+  margin:0 0 10px;
+}
+
+.character-nav button{
+  padding:9px 12px;
+  font-size:14px;
+  border-radius:999px;
+}
+.character-nav button.active{
+  background:var(--accent);
+  color:#100b18;
+  font-weight:800;
+}
+.chips span.watched-chip{
+  background:#7ddc84;
+  border-color:#7ddc84;
+  color:#102214;
+  font-weight:700;
 }
 .grow{flex:1} h2{font-size:21px;margin:0 0 5px} .card p{color:var(--muted);margin:0 0 10px;line-height:1.4} .actions{display:flex;flex-direction:column;gap:8px}
 .watch,.skip{border-radius:50%;width:44px;height:44px;padding:0;font-weight:900;background:#161122;color:#f7f4fb}
@@ -187,14 +238,14 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     grid-template-columns:1fr !important;
   }
 
-  .three-tabs{
+  .four-tabs{
     display:grid !important;
     grid-template-columns:1fr !important;
     gap:12px !important;
   }
 
   .filters select,
-  .three-tabs button{
+  .four-tabs button{
     width:100% !important;
     min-width:0 !important;
   }
@@ -231,10 +282,11 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
   <div><strong id="watchedRuntime">0h 0m</strong><span> watched</span></div>
 </div></header>
 <main>
-<div class="tabs three-tabs">
+<div class="tabs four-tabs">
   <button class="tab active" id="unwatchedTab">Unwatched</button>
   <button class="tab" id="watchedTab">Watched</button>
   <button class="tab" id="skippingTab">Skipping</button>
+  <button class="tab" id="charactersTab">Characters</button>
 </div>
 <input id="search" placeholder="Search titles or characters" autocomplete="off">
 <div class="filters"><select id="priority"><option>All priorities</option><option>Vital</option><option>Helpful</option><option>Skippable</option></select><select id="phase">
@@ -1123,7 +1175,1124 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Non-spoilery summary</h3><p>Peter continues as Spider-Man in a world that no longer knows him.</p>
     <h3>Doom prep note</h3><p>Coming before Doomsday and likely important for Peter&#x27;s status.</p>
   </details>
-</article></section><div id="empty" class="empty" hidden>No titles here. Suspiciously peaceful.</div>
+</article></section>
+<section id="charactersPage" hidden>
+<div class="character-nav-section">
+  <h3>SHIELD & STARK</h3>
+  <div class="character-nav">
+    <button data-character-button="tony-stark">Tony Stark</button>
+    <button data-character-button="pepper-potts">Pepper Potts</button>
+    <button data-character-button="james-rhodes">James Rhodes</button>
+    <button data-character-button="phil-coulson">Phil Coulson</button>
+    <button data-character-button="nick-fury">Nick Fury</button>
+  </div>
+</div>
+
+<div class="character-nav-section">
+  <h3>AVENGERS</h3>
+  <div class="character-nav">
+    <button data-character-button="steve-rogers">Steve Rogers</button>
+    <button data-character-button="thor">Thor</button>
+    <button data-character-button="loki">Loki</button>
+    <button data-character-button="bruce-banner">Bruce Banner</button>
+    <button data-character-button="natasha-romanoff">Natasha Romanoff</button>
+    <button data-character-button="clint-barton">Clint Barton</button>
+  </div>
+</div>
+
+<div class="character-nav-section">
+  <h3>NEXT GENERATION</h3>
+  <div class="character-nav">
+    <button data-character-button="vision">Vision</button>
+    <button data-character-button="wanda-maximoff">Wanda Maximoff</button>
+    <button data-character-button="scott-lang">Scott Lang</button>
+    <button data-character-button="peter-parker">Peter Parker</button>
+    <button data-character-button="bucky-barnes">Bucky Barnes</button>
+    <button data-character-button="sam-wilson">Sam Wilson</button>
+  </div>
+</div>
+
+<div class="character-nav-section">
+  <h3>WAKANDA</h3>
+  <div class="character-nav">
+    <button data-character-button="tchalla">T'Challa</button>
+    <button data-character-button="shuri">Shuri</button>
+  </div>
+</div>
+
+<div class="character-nav-section">
+  <h3>COSMIC</h3>
+  <div class="character-nav">
+    <button data-character-button="carol-danvers">Carol Danvers</button>
+  </div>
+</div>
+
+<div class="character-nav-section">
+  <h3>MAGIC & MULTIVERSE</h3>
+  <div class="character-nav">
+    <button data-character-button="stephen-strange">Stephen Strange</button>
+    <button data-character-button="wong">Wong</button>
+  </div>
+</div>
+
+<div class="character-nav-section">
+  <h3>THUNDERBOLTS</h3>
+  <div class="character-nav">
+    <button data-character-button="yelena-belova">Yelena Belova</button>
+  </div>
+</div>
+
+<div class="character-nav-section">
+  <h3>FANTASTIC FOUR & DOOM</h3>
+  <div class="character-nav">
+    <button data-character-button="reed-richards">Reed Richards</button>
+    <button data-character-button="victor-von-doom">Victor von Doom</button>
+  </div>
+</div>
+
+<div class="character-card" data-character="tony-stark">
+
+    <h2>Tony Stark / Iron Man</h2>
+
+    <div class="character-images">
+  <img src="characters/tony-stark.webp" alt="Tony Stark">
+  <img src="characters/iron-man.webp" alt="Iron Man">
+</div>
+
+    <h3>Character Summary</h3>
+
+<p>Tony Stark is a genius inventor, billionaire industrialist and the original public face of the Avengers. His journey takes him from reckless weapons manufacturer to reluctant hero, mentor and self-sacrificing protector. Across the MCU, his choices shape the team, create consequences other characters inherit, and leave a legacy that keeps echoing long after his story ends.</p>
+    <h3>Key Relationships</h3>
+
+    <div class="chips">
+
+      <span>Pepper Potts</span>
+
+      <span>James Rhodes</span>
+
+      <span>Peter Parker</span>
+
+      <span>Steve Rogers</span>
+
+    </div>
+
+    <h3>Essential Appearances</h3>
+
+    <div class="chips">
+
+      <span>Iron Man</span>
+
+      <span>The Avengers</span>
+
+      <span>Civil War</span>
+
+      <span>Infinity War</span>
+
+      <span>Endgame</span>
+
+    </div>
+
+    <h3>Doom Relevance</h3>
+
+    <p>Stark technology and Tony's legacy continue to influence the MCU long after Endgame.</p>
+
+    <h3>Appears In</h3>
+
+    <div class="chips">
+
+      <span>Iron Man</span>
+
+      <span>Iron Man 2</span>
+
+      <span>Iron Man 3</span>
+
+      <span>The Avengers</span>
+
+      <span>Age of Ultron</span>
+
+      <span>Civil War</span>
+
+      <span>Infinity War</span>
+
+      <span>Endgame</span>
+
+    </div>
+
+    <h3>Watch Progress</h3>
+
+    <p class="character-progress">0 / 8 titles</p>
+
+  </div>
+<div class="character-card" data-character="steve-rogers">
+  <h2>Steve Rogers / Captain America</h2>
+  <div class="character-images">
+    <img src="characters/steve-rogers.webp" alt="Steve Rogers">
+    <img src="characters/captain-america.webp" alt="Captain America">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Steve Rogers begins as a determined but physically frail young man who volunteers for a military experiment during World War II and becomes Captain America. After spending decades frozen in the ice, he wakes in the modern world and becomes one of the Avengers' most trusted leaders. Throughout the MCU, Steve serves as the moral centre of the team, though his unwavering principles often bring him into conflict with friends, governments and even fellow heroes.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Bucky Barnes</span>
+    <span>Sam Wilson</span>
+    <span>Tony Stark</span>
+    <span>Peggy Carter</span>
+    <span>Natasha Romanoff</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Captain America: The First Avenger</span>
+    <span>The Avengers</span>
+    <span>Captain America: The Winter Soldier</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Although Steve's story reaches a natural conclusion in Endgame, his legacy continues through Sam Wilson and the ideals of Captain America. Understanding Steve's influence helps explain many of the relationships and conflicts that shape the modern MCU.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Captain America: The First Avenger</span>
+    <span>The Avengers</span>
+    <span>Captain America: The Winter Soldier</span>
+    <span>Avengers: Age of Ultron</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 7 titles</p>
+</div>
+<div class="character-card" data-character="thor">
+  <h2>Thor / God of Thunder</h2>
+
+  <div class="character-images">
+    <img src="characters/thor.jpg" alt="Thor">
+    <img src="characters/thor-hero.jpg" alt="Thor in battle armour">
+  </div>
+
+  <h3>Character Summary</h3>
+  <p>Thor is the Asgardian God of Thunder, a prince raised for glory who gradually learns that being worthy means more than strength, status or victory in battle. His story moves between cosmic war, family loss, exile, grief and reinvention, often with more humour than anyone involved probably planned. Across the MCU, Thor connects Earth’s heroes to the wider universe and remains one of the Avengers’ most powerful and unpredictable allies.</p>
+
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Loki</span>
+    <span>Jane Foster</span>
+    <span>Odin</span>
+    <span>Heimdall</span>
+    <span>The Avengers</span>
+  </div>
+
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Thor</span>
+    <span>The Avengers</span>
+    <span>Thor: Ragnarok</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>Thor: Love and Thunder</span>
+  </div>
+
+  <h3>Doom Relevance</h3>
+  <p>Thor brings the cosmic side of the MCU into focus, especially through Asgard, Loki, the Infinity Stones and the Avengers’ battles beyond Earth. His history helps explain the scale of threats the Avengers have faced before, and why future universe-level conflicts rarely stay confined to one planet.</p>
+
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Thor</span>
+    <span>The Avengers</span>
+    <span>Thor: The Dark World</span>
+    <span>Avengers: Age of Ultron</span>
+    <span>Thor: Ragnarok</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>Thor: Love and Thunder</span>
+  </div>
+
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 8 titles</p>
+</div>
+<div class="character-card" data-character="bruce-banner">
+  <h2>Bruce Banner / The Hulk</h2>
+
+  <div class="character-images">
+    <img src="characters/bruce-banner.webp" alt="Bruce Banner">
+    <img src="characters/hulk.jpeg" alt="Hulk">
+  </div>
+
+  <h3>Character Summary</h3>
+  <p>Bruce Banner is a brilliant scientist whose exposure to gamma radiation leaves him sharing his life with the Hulk, a powerful alter ego driven by anger and instinct. Much of Bruce's journey centres on balancing intellect, responsibility and fear of his own strength. Over time he becomes one of the Avengers' most trusted members, contributing some of the team's most important scientific breakthroughs while gradually finding peace with both sides of himself.</p>
+
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Tony Stark</span>
+    <span>Natasha Romanoff</span>
+    <span>Thor</span>
+    <span>Steve Rogers</span>
+    <span>Jennifer Walters</span>
+  </div>
+
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>The Avengers</span>
+    <span>Avengers: Age of Ultron</span>
+    <span>Thor: Ragnarok</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>She-Hulk: Attorney at Law</span>
+  </div>
+
+  <h3>Doom Relevance</h3>
+  <p>Bruce is one of the MCU's leading scientific minds and frequently plays a key role in understanding threats that other heroes cannot. His work alongside Tony Stark, his involvement with the Infinity Stones and his continuing presence after Endgame make him one of the characters most likely to influence future Avengers stories.</p>
+
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>The Incredible Hulk</span>
+    <span>The Avengers</span>
+    <span>Avengers: Age of Ultron</span>
+    <span>Thor: Ragnarok</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>Shang-Chi and the Legend of the Ten Rings</span>
+    <span>She-Hulk: Attorney at Law</span>
+  </div>
+
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 8 titles</p>
+</div>
+<div class="character-card" data-character="natasha-romanoff">
+  <h2>Natasha Romanoff / Black Widow </h2>
+
+  <div class="character-images">
+    <img src="characters/natasha-romanoff.jpeg" alt="Natasha Romanoff">
+    <img src="characters/black-widow.webp" alt="Black Widow">
+  </div>
+
+  <h3>Character Summary</h3>
+  <p>Natasha Romanoff is a former Russian spy and assassin who becomes one of the founding Avengers. Highly skilled in combat, intelligence gathering and covert operations, she often serves as the team's most grounded member despite having one of the darkest pasts. Throughout the MCU, Natasha's story centres on redemption, found family and the belief that people can become more than the worst things they've done.</p>
+
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Clint Barton</span>
+    <span>Bruce Banner</span>
+    <span>Steve Rogers</span>
+    <span>Yelena Belova</span>
+    <span>The Avengers</span>
+  </div>
+
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>The Avengers</span>
+    <span>Captain America: The Winter Soldier</span>
+    <span>Avengers: Age of Ultron</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+  </div>
+
+  <h3>Doom Relevance</h3>
+  <p>Although Natasha's story reaches its conclusion before Doomsday, her influence continues through the Avengers she helped hold together and through Yelena Belova, who carries forward much of her legacy. Understanding Natasha helps explain many of the team's most important relationships and sacrifices.</p>
+
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Iron Man 2</span>
+    <span>The Avengers</span>
+    <span>Captain America: The Winter Soldier</span>
+    <span>Avengers: Age of Ultron</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>Black Widow</span>
+  </div>
+
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 8 titles</p>
+</div>
+<div class="character-card" data-character="clint-barton">
+  <h2>Clint Barton / Hawkeye</h2>
+
+  <div class="character-images">
+    <img src="characters/clint-barton.jpeg" alt="Clint Barton">
+    <img src="characters/hawkeye.jpeg" alt="Hawkeye">
+  </div>
+
+  <h3>Character Summary</h3>
+  <p>Clint Barton is a master archer, former S.H.I.E.L.D. agent and founding Avenger. Unlike many of his teammates, Clint possesses no superpowers, relying instead on exceptional skill, experience and determination. Throughout the MCU he often serves as a reminder of what the heroes are fighting for, balancing the demands of saving the world with his devotion to his family. His story explores loyalty, loss and the consequences of a life spent in conflict.</p>
+
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Natasha Romanoff</span>
+    <span>Laura Barton</span>
+    <span>Kate Bishop</span>
+    <span>The Avengers</span>
+    <span>His Family</span>
+  </div>
+
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>The Avengers</span>
+    <span>Avengers: Age of Ultron</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Endgame</span>
+    <span>Hawkeye</span>
+  </div>
+
+  <h3>Doom Relevance</h3>
+  <p>Although Clint largely steps away from frontline heroics, his influence continues through Kate Bishop and the next generation of heroes. His relationships with Natasha Romanoff and the Avengers remain important parts of the team's history and legacy.</p>
+
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Thor</span>
+    <span>The Avengers</span>
+    <span>Avengers: Age of Ultron</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Endgame</span>
+    <span>Black Widow</span>
+    <span>Hawkeye</span>
+  </div>
+
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 7 titles</p>
+</div>
+
+<div class="character-card" data-character="peter-parker">
+  <h2>Peter Parker / Spider-Man</h2>
+
+  <div class="character-images">
+    <img src="characters/peter-parker.webp" alt="Peter Parker">
+    <img src="characters/spider-man.jpeg" alt="Spider-Man">
+  </div>
+
+  <h3>Character Summary</h3>
+  <p>Peter Parker is a gifted young scientist from Queens who gains spider-like abilities after being bitten by a radioactive spider. Balancing school, friendships and superhero responsibilities, Peter often finds himself carrying burdens far beyond his years. Throughout the MCU, he grows from an enthusiastic teenager eager to impress the Avengers into a more independent hero shaped by loss, sacrifice and hard-earned experience.</p>
+
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Tony Stark</span>
+    <span>May Parker</span>
+    <span>MJ</span>
+    <span>Ned Leeds</span>
+    <span>Happy Hogan</span>
+  </div>
+
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Captain America: Civil War</span>
+    <span>Spider-Man: Homecoming</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>Spider-Man: Far From Home</span>
+    <span>Spider-Man: No Way Home</span>
+  </div>
+
+  <h3>Doom Relevance</h3>
+  <p>Peter remains one of the MCU's most important young heroes and one of the strongest connections to Tony Stark's legacy. Following the events of No Way Home, he occupies a unique position in the MCU, making his future role in major crossover stories particularly significant.</p>
+
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Captain America: Civil War</span>
+    <span>Spider-Man: Homecoming</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>Spider-Man: Far From Home</span>
+    <span>Spider-Man: No Way Home</span>
+    <span>Spider-Man: Brand New Day</span>
+  </div>
+
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 7 titles</p>
+</div>
+<div class="character-card" data-character="stephen-strange">
+  <h2>Stephen Strange / Doctor Strange</h2>
+
+  <div class="character-images">
+    <img src="characters/stephen-strange.webp" alt="Stephen Strange">
+    <img src="characters/doctor-strange.webp" alt="Doctor Strange">
+  </div>
+
+  <h3>Character Summary</h3>
+  <p>Dr Stephen Strange is a brilliant but arrogant neurosurgeon whose life changes after a devastating car accident damages his hands. His search for healing leads him into the world of mystic arts, where he becomes one of Earth's foremost protectors against magical and interdimensional threats. Over time, Strange evolves from a man driven by ego into a leader willing to make impossible choices for the greater good.</p>
+
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Wong</span>
+    <span>Christine Palmer</span>
+    <span>Peter Parker</span>
+    <span>Wanda Maximoff</span>
+    <span>The Ancient One</span>
+  </div>
+
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Doctor Strange</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>Spider-Man: No Way Home</span>
+    <span>Doctor Strange in the Multiverse of Madness</span>
+  </div>
+
+  <h3>Doom Relevance</h3>
+  <p>Few characters are more important to understanding the modern MCU than Doctor Strange. His stories introduce the multiverse, alternate realities, incursions and many of the concepts that underpin upcoming crossover events. If Doomsday explores the consequences of multiversal instability, Strange is likely to be one of the central figures involved.</p>
+
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Doctor Strange</span>
+    <span>Thor: Ragnarok</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>Spider-Man: No Way Home</span>
+    <span>Doctor Strange in the Multiverse of Madness</span>
+  </div>
+
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 6 titles</p>
+</div>
+
+<div class="character-card" data-character="wanda-maximoff">
+  <h2>Wanda Maximoff / Scarlet Witch</h2>
+  <div class="character-images">
+    <img src="characters/wanda-maximoff.jpeg" alt="Wanda Maximoff">
+    <img src="characters/scarlet-witch.webp" alt="Scarlet Witch">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Wanda Maximoff begins her MCU journey as a Sokovian survivor whose life is shaped by loss, trauma and extraordinary power. Initially allied against the Avengers before becoming one herself, Wanda develops abilities that grow far beyond those of most heroes. Her story explores grief, love, identity and the consequences of power without limits, ultimately transforming her into one of the most influential figures in the MCU's multiverse era.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Vision</span>
+    <span>Pietro Maximoff</span>
+    <span>Stephen Strange</span>
+    <span>Monica Rambeau</span>
+    <span>The Avengers</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Avengers: Age of Ultron</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>WandaVision</span>
+    <span>Doctor Strange in the Multiverse of Madness</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Wanda is one of the most important characters in understanding the MCU's multiverse storyline. WandaVision introduces several ideas that continue to shape later stories, while Multiverse of Madness explores the dangers of reality-altering power, alternate universes and magical forces beyond ordinary understanding. Even when absent from the screen, Wanda's actions continue to influence the wider MCU.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Captain America: The Winter Soldier</span>
+    <span>Avengers: Age of Ultron</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>WandaVision</span>
+    <span>Doctor Strange in the Multiverse of Madness</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 7 titles</p>
+</div>
+<div class="character-card" data-character="phil-coulson">
+  <h2>Phil Coulson / Agent Coulson</h2>
+  <div class="character-images">
+    <img src="characters/phil-coulson.jpg" alt="Phil Coulson">
+    <img src="characters/agent-coulson.jpeg" alt="Agent Coulson">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Phil Coulson is a senior S.H.I.E.L.D. agent whose calm professionalism, loyalty and dry sense of humour make him one of the MCU's most beloved supporting characters. Originally tasked with monitoring emerging heroes, Coulson becomes one of the key figures responsible for bringing the Avengers together. Despite rarely possessing the power or status of the people around him, his integrity, courage and belief in heroism leave a lasting impact on the MCU.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Nick Fury</span>
+    <span>Clint Barton</span>
+    <span>Tony Stark</span>
+    <span>Steve Rogers</span>
+    <span>Maria Hill</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Iron Man</span>
+    <span>Iron Man 2</span>
+    <span>Thor</span>
+    <span>The Avengers</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Coulson's direct relevance to Doomsday is limited compared to characters such as Strange or Wanda. However, understanding Coulson helps explain the origins of the Avengers, the role of S.H.I.E.L.D. and many of the relationships that shaped the MCU's earliest years. He remains one of the franchise's most important foundational characters.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Iron Man</span>
+    <span>Iron Man 2</span>
+    <span>Thor</span>
+    <span>The Avengers</span>
+    <span>Captain Marvel</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 5 titles</p>
+</div>
+<div class="character-card" data-character="loki">
+  <h2>Loki / God of Mischief</h2>
+  <div class="character-images">
+    <img src="characters/loki.webp" alt="Loki">
+    <img src="characters/god-of-mischief.webp" alt="God of Mischief">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Loki is the adopted son of Odin, the brother of Thor and one of the MCU's most complex characters. Beginning as a charismatic villain driven by jealousy, ambition and a desire for belonging, Loki gradually evolves through repeated failures, losses and unexpected friendships. Across multiple timelines and realities, his story becomes one of identity, redemption and responsibility, transforming him from an enemy of the Avengers into one of the most important figures in the multiverse.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Thor</span>
+    <span>Mobius</span>
+    <span>Sylvie</span>
+    <span>Odin</span>
+    <span>Frigga</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Thor</span>
+    <span>The Avengers</span>
+    <span>Thor: Ragnarok</span>
+    <span>Avengers: Infinity War</span>
+    <span>Loki Season 1</span>
+    <span>Loki Season 2</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Few characters are more important to understanding the MCU's future than Loki. His Disney+ series introduces the Time Variance Authority, branching timelines, multiversal war and many of the concepts that underpin the MCU's current saga. By the end of Loki Season 2, his role places him at the centre of the multiverse itself, making him one of the most significant characters heading into Doomsday.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Thor</span>
+    <span>The Avengers</span>
+    <span>Thor: The Dark World</span>
+    <span>Thor: Ragnarok</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>Loki Season 1</span>
+    <span>Loki Season 2</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 8 titles</p>
+</div>
+<div class="character-card" data-character="bucky-barnes">
+  <h2>Bucky Barnes / The Winter Soldier</h2>
+  <div class="character-images">
+    <img src="characters/bucky-barnes.jpg" alt="Bucky Barnes">
+    <img src="characters/winter-soldier.webp" alt="Winter Soldier">
+  </div>
+  <h3>Character Summary</h3>
+  <p>James Buchanan "Bucky" Barnes is Steve Rogers' oldest friend and a decorated soldier who is presumed dead during World War II. In reality, he is captured, experimented on and transformed into the Winter Soldier, a highly effective assassin controlled by Hydra. Much of Bucky's story revolves around reclaiming his identity, confronting the actions he was forced to commit and learning how to live beyond his past. Over time, he becomes one of the MCU's most compelling redemption stories.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Steve Rogers</span>
+    <span>Sam Wilson</span>
+    <span>Shuri</span>
+    <span>Ayo</span>
+    <span>The Avengers</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Captain America: The First Avenger</span>
+    <span>Captain America: The Winter Soldier</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>The Falcon and the Winter Soldier</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Bucky remains an active hero in the modern MCU and continues to play an important role in the post-Endgame world. His partnership with Sam Wilson helps shape the future of Captain America, while his involvement with the Thunderbolts places him among a group expected to remain significant in upcoming crossover stories.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Captain America: The First Avenger</span>
+    <span>Captain America: The Winter Soldier</span>
+    <span>Captain America: Civil War</span>
+    <span>Black Panther</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>The Falcon and the Winter Soldier</span>
+    <span>Thunderbolts*</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 8 titles</p>
+</div>
+<div class="character-card" data-character="sam-wilson">
+  <h2>Sam Wilson / The Falcon / Captain America</h2>
+  <div class="character-images">
+    <img src="characters/sam-wilson.jpeg" alt="Sam Wilson">
+    <img src="characters/captain-america-sam.webp" alt="Captain America">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Sam Wilson is a former United States Air Force pararescueman who becomes one of Steve Rogers' closest allies and a trusted member of the Avengers. Known for his empathy, integrity and ability to connect with people, Sam often serves as a grounding influence within the team. Following Steve Rogers' retirement, Sam inherits the mantle of Captain America and faces the challenge of defining what that symbol means in a changing world.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Steve Rogers</span>
+    <span>Bucky Barnes</span>
+    <span>Joaquin Torres</span>
+    <span>Isaiah Bradley</span>
+    <span>The Avengers</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Captain America: The Winter Soldier</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>The Falcon and the Winter Soldier</span>
+    <span>Captain America: Brave New World</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Sam is one of the most important characters in the MCU's future. As the current Captain America, he represents the continuation of Steve Rogers' legacy and is expected to play a major leadership role in future Avengers stories. Understanding Sam's journey helps explain the modern status of Captain America and the direction of the MCU following Endgame.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Captain America: The Winter Soldier</span>
+    <span>Avengers: Age of Ultron</span>
+    <span>Ant-Man</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>The Falcon and the Winter Soldier</span>
+    <span>Captain America: Brave New World</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 8 titles</p>
+</div>
+<div class="character-card" data-character="james-rhodes">
+  <h2>James Rhodes / War Machine</h2>
+  <div class="character-images">
+    <img src="characters/james-rhodes.jpeg" alt="James Rhodes">
+    <img src="characters/war-machine.webp" alt="War Machine">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Colonel James Rhodes, often known as Rhodey, is a United States Air Force officer, Avenger and Tony Stark's closest friend. Practical, dependable and remarkably patient, Rhodey frequently serves as the voice of reason when those around him are making increasingly questionable decisions. Although he often operates in the shadow of larger personalities, Rhodey remains one of the MCU's most reliable heroes and one of the people Tony trusts most.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Tony Stark</span>
+    <span>Pepper Potts</span>
+    <span>Sam Wilson</span>
+    <span>The Avengers</span>
+    <span>Vision</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Iron Man</span>
+    <span>Iron Man 2</span>
+    <span>Iron Man 3</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Rhodey remains one of the MCU's longest-serving heroes and one of the few people with direct ties to both the Avengers' origins and their future. His close connection to Tony Stark's legacy, combined with his continuing role within the superhero community, makes him an important supporting figure in the post-Endgame MCU.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Iron Man</span>
+    <span>Iron Man 2</span>
+    <span>Iron Man 3</span>
+    <span>Avengers: Age of Ultron</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>The Falcon and the Winter Soldier</span>
+    <span>Secret Invasion</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 9 titles</p>
+</div>
+<div class="character-card" data-character="pepper-potts">
+    <h2>Pepper Potts / Rescue</h2>
+  <div class="character-images">
+    <img src="characters/pepper-potts.jpg" alt="Pepper Potts">
+    <img src="characters/rescue.jpg" alt="Rescue">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Virginia "Pepper" Potts begins as Tony Stark's highly capable assistant before becoming the CEO of Stark Industries, Tony's partner and eventually his wife. Intelligent, compassionate and remarkably patient, Pepper often serves as the stabilising force in Tony's life while building an impressive career of her own. Throughout the MCU, she demonstrates that heroism is not limited to people with superpowers, repeatedly stepping into difficult situations with courage, practicality and determination.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Tony Stark</span>
+    <span>Morgan Stark</span>
+    <span>James Rhodes</span>
+    <span>Happy Hogan</span>
+    <span>The Avengers</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Iron Man</span>
+    <span>Iron Man 2</span>
+    <span>Iron Man 3</span>
+    <span>Spider-Man: Homecoming</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Pepper remains one of the most important links to Tony Stark's legacy. Through her leadership of Stark Industries, her role as Morgan's mother and her connections to many of the Avengers, she continues to represent the lasting impact of one of the MCU's most influential heroes. While she is unlikely to be a frontline participant in future conflicts, her presence helps maintain continuity between the Infinity Saga and the MCU's future.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Iron Man</span>
+    <span>Iron Man 2</span>
+    <span>Iron Man 3</span>
+    <span>Spider-Man: Homecoming</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 6 titles</p>
+</div>
+<div class="character-card" data-character="wong">
+  <h2>Wong / Sorcerer Supreme</h2>
+  <div class="character-images">
+    <img src="characters/wong.jpg" alt="Wong">
+    <img src="characters/sorcerer-supreme.webp" alt="Sorcerer Supreme Wong">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Wong is a master of the mystic arts, protector of Kamar-Taj and the Sorcerer Supreme. Originally serving as a mentor and ally to Stephen Strange, Wong gradually becomes one of the MCU's most dependable and respected magical figures. Practical, intelligent and blessed with an impressive ability to tolerate the poor decisions of those around him, Wong often serves as the voice of reason during magical and multiversal crises.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Stephen Strange</span>
+    <span>America Chavez</span>
+    <span>Wanda Maximoff</span>
+    <span>The Sorcerers of Kamar-Taj</span>
+    <span>Abomination</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Doctor Strange</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>Shang-Chi and the Legend of the Ten Rings</span>
+    <span>Spider-Man: No Way Home</span>
+    <span>Doctor Strange in the Multiverse of Madness</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Wong is one of the most important supporting characters in the modern MCU. As Sorcerer Supreme, he occupies a central position in stories involving magic, alternate realities and multiversal threats. His appearances frequently connect otherwise unrelated projects, making him one of the MCU's key linking characters heading into Doomsday.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Doctor Strange</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>Shang-Chi and the Legend of the Ten Rings</span>
+    <span>Spider-Man: No Way Home</span>
+    <span>Doctor Strange in the Multiverse of Madness</span>
+    <span>She-Hulk: Attorney at Law</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 7 titles</p>
+</div>
+<div class="character-card" data-character="nick-fury">
+  <h2>Nick Fury / Director of SHIELD</h2>
+  <div class="character-images">
+    <img src="characters/nick-fury.avif" alt="Nick Fury">
+    <img src="characters/shield-director.webp" alt="Nick Fury Director of SHIELD">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Nick Fury is the former Director of S.H.I.E.L.D. and one of the architects of the modern superhero era. A master strategist, intelligence operative and chronic keeper of secrets, Fury spends much of the MCU operating several steps ahead of everyone else. While his methods are often questionable, his ability to identify threats and assemble the right people to face them plays a crucial role in the formation and survival of the Avengers.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Phil Coulson</span>
+    <span>Maria Hill</span>
+    <span>Tony Stark</span>
+    <span>Carol Danvers</span>
+    <span>The Avengers</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Iron Man</span>
+    <span>The Avengers</span>
+    <span>Captain America: The Winter Soldier</span>
+    <span>Avengers: Infinity War</span>
+    <span>Captain Marvel</span>
+    <span>Secret Invasion</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Fury's greatest importance lies in understanding how the MCU's heroes became connected in the first place. While he is less central to the multiverse storyline than characters such as Strange, Wanda or Loki, he remains a major figure in global and interplanetary security. His relationships with both the Avengers and the Skrulls continue to influence the MCU's wider political landscape.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Iron Man</span>
+    <span>Iron Man 2</span>
+    <span>Thor</span>
+    <span>The Avengers</span>
+    <span>Captain America: The Winter Soldier</span>
+    <span>Avengers: Age of Ultron</span>
+    <span>Avengers: Infinity War</span>
+    <span>Captain Marvel</span>
+    <span>Spider-Man: Far From Home</span>
+    <span>Secret Invasion</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 10 titles</p>
+</div>
+<div class="character-card" data-character="tchalla">
+  <h2>T'Challa / Black Panther</h2>
+  <div class="character-images">
+    <img src="characters/tchalla.webp" alt="T'Challa">
+    <img src="characters/black-panther.webp" alt="Black Panther">
+  </div>
+  <h3>Character Summary</h3>
+  <p>T'Challa is the king of Wakanda and the hero known as the Black Panther. Following the death of his father, he inherits both the throne and the responsibility of protecting one of the most technologically advanced nations on Earth. Wise, compassionate and deeply committed to his people, T'Challa strives to balance tradition with progress while leading Wakanda onto the world stage.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Shuri</span>
+    <span>Ramonda</span>
+    <span>Okoye</span>
+    <span>Nakia</span>
+    <span>Bucky Barnes</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Captain America: Civil War</span>
+    <span>Black Panther</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Although T'Challa's story concludes before the MCU's current saga, his legacy remains central to Wakanda's future. Wakanda continues to be one of the most powerful and influential nations in the MCU, with its technology, resources and leadership playing an important role in many modern stories. Understanding T'Challa helps explain the significance of Wakanda and the characters who carry his legacy forward.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Captain America: Civil War</span>
+    <span>Black Panther</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>What If...? Season 1</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 5 titles</p>
+</div>
+
+<div class="character-card" data-character="shuri">
+  <h2>Shuri / Black Panther</h2>
+  <div class="character-images">
+    <img src="characters/shuri.webp" alt="Shuri">
+    <img src="characters/black-panther-shuri.jpg" alt="Black Panther Shuri">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Shuri is the princess of Wakanda, a brilliant inventor and one of the most intelligent people in the MCU. Initially known for her technological innovations and playful personality, Shuri gradually takes on greater responsibility as her family and nation face repeated losses. Her journey explores grief, leadership and legacy, ultimately leading her to carry the mantle of the Black Panther while continuing to shape Wakanda's future through science and innovation.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>T'Challa</span>
+    <span>Ramonda</span>
+    <span>Okoye</span>
+    <span>Riri Williams</span>
+    <span>Bucky Barnes</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Black Panther</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>Black Panther: Wakanda Forever</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Shuri is one of the MCU's most important modern leaders. As the current Black Panther and one of the world's greatest scientific minds, she represents both the future of Wakanda and the continuation of T'Challa's legacy. Wakanda's technology, resources and global influence are likely to remain significant in future Avengers stories, making Shuri a key figure heading into Doomsday.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Black Panther</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>Black Panther: Wakanda Forever</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 4 titles</p>
+</div>
+<div class="character-card" data-character="carol-danvers">
+  <h2>Carol Danvers / Captain Marvel</h2>
+  <div class="character-images">
+    <img src="characters/carol-danvers.jpeg" alt="Carol Danvers">
+    <img src="characters/captain-marvel.webp" alt="Captain Marvel">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Carol Danvers is a former United States Air Force pilot who gains extraordinary cosmic powers after an accident involving an experimental energy source. Confident, determined and fiercely independent, Carol spends much of her time protecting worlds beyond Earth while maintaining ties to her home planet. As Captain Marvel, she becomes one of the most powerful heroes in the MCU and a key figure in conflicts that extend far beyond the Avengers.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Nick Fury</span>
+    <span>Monica Rambeau</span>
+    <span>Maria Rambeau</span>
+    <span>Kamala Khan</span>
+    <span>The Avengers</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Captain Marvel</span>
+    <span>Avengers: Endgame</span>
+    <span>Ms. Marvel</span>
+    <span>The Marvels</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Carol is one of the MCU's most powerful heroes and one of the few characters whose responsibilities regularly extend beyond Earth. Her connections to cosmic threats, interplanetary politics and the wider universe make her an important figure in large-scale crossover events. Understanding Carol also helps explain the stories of Monica Rambeau and Kamala Khan, two characters who are increasingly important in the modern MCU.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Captain Marvel</span>
+    <span>Avengers: Endgame</span>
+    <span>Shang-Chi and the Legend of the Ten Rings</span>
+    <span>Ms. Marvel</span>
+    <span>The Marvels</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 5 titles</p>
+</div>
+<div class="character-card" data-character="yelena-belova">
+  <h2>Yelena Belova / Black Widow</h2>
+  <div class="character-images">
+    <img src="characters/yelena-belova.jpg" alt="Yelena Belova">
+    <img src="characters/black-widow-yelena.webp" alt="Yelena Belova Black Widow">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Yelena Belova is a highly skilled spy, assassin and former Black Widow who was trained alongside Natasha Romanoff in the Red Room. Beneath her sharp wit, dry humour and occasional enthusiasm for pockets lies a deeply loyal and compassionate person struggling with loss and identity. Following Natasha's death, Yelena gradually steps into a larger role within the MCU while carrying forward parts of her sister's legacy.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Natasha Romanoff</span>
+    <span>Alexei Shostakov</span>
+    <span>Melina Vostokoff</span>
+    <span>Kate Bishop</span>
+    <span>Bucky Barnes</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Black Widow</span>
+    <span>Hawkeye</span>
+    <span>Thunderbolts*</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Yelena is one of the MCU's most important next-generation heroes. Through her connections to Natasha Romanoff, Kate Bishop and the Thunderbolts, she bridges the gap between the Infinity Saga and the MCU's future. Her role within the Thunderbolts places her among a group expected to remain significant in upcoming crossover stories.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Black Widow</span>
+    <span>Hawkeye</span>
+    <span>Thunderbolts*</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 3 titles</p>
+</div>
+<div class="character-card" data-character="scott-lang">
+  <h2>Scott Lang / Ant-Man</h2>
+  <div class="character-images">
+    <img src="characters/scott-lang.webp" alt="Scott Lang">
+    <img src="characters/ant-man.webp" alt="Ant-Man">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Scott Lang is a former electrical engineer and reformed thief who becomes the hero known as Ant-Man after acquiring technology that allows him to shrink or grow in size. Good-hearted, optimistic and often underestimated, Scott frequently finds himself caught up in events much larger than he ever expected. His humour and relatability make him one of the MCU's most grounded heroes, while his connection to the Quantum Realm places him at the centre of several major developments.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Hope van Dyne</span>
+    <span>Cassie Lang</span>
+    <span>Hank Pym</span>
+    <span>Janet van Dyne</span>
+    <span>The Avengers</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Ant-Man</span>
+    <span>Captain America: Civil War</span>
+    <span>Ant-Man and the Wasp</span>
+    <span>Avengers: Endgame</span>
+    <span>Ant-Man and the Wasp: Quantumania</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Scott's importance extends far beyond his size-changing abilities. His knowledge of the Quantum Realm helps make the events of Endgame possible, and Quantumania introduces concepts and characters that play a major role in the Multiverse Saga. Scott's corner of the MCU remains closely tied to the wider story of alternate realities and universe-spanning threats.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Ant-Man</span>
+    <span>Captain America: Civil War</span>
+    <span>Ant-Man and the Wasp</span>
+    <span>Avengers: Endgame</span>
+    <span>What If...? Season 1</span>
+    <span>Ant-Man and the Wasp: Quantumania</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 6 titles</p>
+</div>
+<div class="character-card" data-character="vision">
+  <h2>Vision / The Vision</h2>
+  <div class="character-images">
+    <img src="characters/vision.webp" alt="Vision">
+    <img src="characters/white-vision.jpg" alt="White Vision">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Vision is a synthetic being created from a unique combination of advanced artificial intelligence, Vibranium technology and the Mind Stone. Thoughtful, compassionate and endlessly curious about humanity, Vision quickly becomes one of the Avengers' most trusted members despite being one of its newest. His story explores identity, consciousness, love and what it means to be human, particularly through his relationship with Wanda Maximoff.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Wanda Maximoff</span>
+    <span>Tony Stark</span>
+    <span>Bruce Banner</span>
+    <span>Ultron</span>
+    <span>The Avengers</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>Avengers: Age of Ultron</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Infinity War</span>
+    <span>WandaVision</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Vision's importance extends far beyond his original Avengers appearances. WandaVision introduces both a recreated Vision and the White Vision, whose future remains unresolved. As one of the MCU's most unique characters, Vision sits at the intersection of artificial intelligence, identity and the consequences of the Infinity Saga. His story is expected to continue and may have significant implications for future MCU projects.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Avengers: Age of Ultron</span>
+    <span>Captain America: Civil War</span>
+    <span>Avengers: Infinity War</span>
+    <span>Avengers: Endgame</span>
+    <span>WandaVision</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 5 titles</p>
+</div>
+<div class="character-card" data-character="reed-richards">
+  <h2>Reed Richards / Mister Fantastic</h2>
+  <div class="character-images">
+    <img src="characters/reed-richards.jpg" alt="Reed Richards">
+    <img src="characters/mister-fantastic.webp" alt="Mister Fantastic">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Reed Richards is a scientific genius, explorer and leader of the Fantastic Four. Widely regarded as one of the most intelligent people in the Marvel Universe, Reed combines extraordinary intellect with an endless curiosity about the nature of reality itself. As Mister Fantastic, his abilities allow him to stretch and reshape his body, though his greatest strength has always been his mind. Reed's discoveries frequently push the boundaries of science, space and the multiverse, often with consequences far beyond Earth.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Sue Storm</span>
+    <span>Johnny Storm</span>
+    <span>Ben Grimm</span>
+    <span>Victor von Doom</span>
+    <span>The Fantastic Four</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>The Fantastic Four: First Steps</span>
+    <span>Avengers: Doomsday</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Reed Richards may be one of the most important characters in the MCU's future. Across Marvel history, his relationship with Victor von Doom is one of the defining rivalries in the entire franchise. Reed's scientific expertise, leadership of the Fantastic Four and connections to multiversal concepts place him at the centre of many stories involving Doctor Doom. Understanding Reed is likely to be essential for understanding Doomsday.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>Doctor Strange in the Multiverse of Madness</span>
+    <span>The Fantastic Four: First Steps</span>
+    <span>Avengers: Doomsday</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 3 titles</p>
+</div>
+<div class="character-card" data-character="victor-von-doom">
+  <h2>Victor von Doom / Doctor Doom</h2>
+  <div class="character-images">
+    <img src="characters/victor-von-doom.avif" alt="Victor von Doom">
+    <img src="characters/doctor-doom.webp" alt="Doctor Doom">
+  </div>
+  <h3>Character Summary</h3>
+  <p>Victor von Doom is one of Marvel's most iconic and dangerous figures. A brilliant scientist, ruler of the nation of Latveria and master of both technology and mystic arts, Doom combines extraordinary intelligence with an unwavering belief that he alone knows how the world should be governed. His ambition, pride and determination make him a formidable adversary, while his occasional moments of nobility ensure he is far more complex than a traditional villain.</p>
+  <h3>Key Relationships</h3>
+  <div class="chips">
+    <span>Reed Richards</span>
+    <span>Sue Storm</span>
+    <span>The Fantastic Four</span>
+    <span>Valeria Richards</span>
+    <span>Latveria</span>
+  </div>
+  <h3>Essential Appearances</h3>
+  <div class="chips">
+    <span>The Fantastic Four: First Steps</span>
+    <span>Avengers: Doomsday</span>
+    <span>Avengers: Secret Wars</span>
+  </div>
+  <h3>Doom Relevance</h3>
+  <p>Maximum. Doctor Doom is the central figure around whom the MCU's current saga appears to be building. Across Marvel history, Doom has been involved in some of the franchise's most important stories, particularly those involving the Fantastic Four, multiversal conflicts and Secret Wars. Understanding Doom's motivations, intelligence, ambitions and rivalry with Reed Richards is likely to be essential for understanding the future of the MCU.</p>
+  <h3>Appears In</h3>
+  <div class="chips">
+    <span>The Fantastic Four: First Steps</span>
+    <span>Avengers: Doomsday</span>
+    <span>Avengers: Secret Wars</span>
+  </div>
+  <h3>Watch Progress</h3>
+  <p class="character-progress">0 / 3 titles</p>
+</div>
+
+</section>
+<div id="empty" class="empty" hidden>No titles here. Suspiciously peaceful.</div>
 </main>
 <script>
 (function(){
@@ -1131,6 +2300,9 @@ const watchedKey='sarah-marvel-doom-watched-v1';
 const skippedKey='sarah-marvel-doom-skipped-v1';
 
 const cards=[...document.querySelectorAll('.card')];
+const characterCards=[...document.querySelectorAll('.character-card')];
+const characterButtons=[...document.querySelectorAll('[data-character-button]')];
+let selectedCharacter='tony-stark';
 let tab='unwatched';
 
 let watched=new Set(JSON.parse(localStorage.getItem(watchedKey)||'[]'));
@@ -1226,19 +2398,95 @@ qs('remainingRuntime').textContent=formatRuntime(remainingMinutes);
 qs('watchedRuntime').textContent=formatRuntime(watchedMinutes);
 
   qs('empty').hidden=shown!==0;
+  updateCharacterProgress();
 }
+const titleAliases={
+  'avengers':'the avengers',
+  'age of ultron':'avengers: age of ultron',
+  'civil war':'captain america: civil war',
+  'infinity war':'avengers: infinity war',
+  'endgame':'avengers: endgame',
+  'the winter soldier':'captain america: the winter soldier',
+  'far from home':'spider-man: far from home',
+  'no way home':'spider-man: no way home',
+  'multiverse of madness':'doctor strange in the multiverse of madness',
+  'wakanda forever':'black panther: wakanda forever'
+};
+function updateCharacterProgress(){
+  characterCards.forEach(characterCard=>{
+    const progress=characterCard.querySelector('.character-progress');
+    const appearsHeading=[...characterCard.querySelectorAll('h3')]
+      .find(h=>h.textContent.trim()==='Appears In');
 
+    if(!progress || !appearsHeading) return;
+
+    const appearsChips=appearsHeading.nextElementSibling.querySelectorAll('span');
+    const total=appearsChips.length;
+    let watchedCount=0;
+
+  appearsChips.forEach(chip=>{
+const rawTitle=chip.textContent.trim().toLowerCase();
+const title=titleAliases[rawTitle] || rawTitle;
+
+  const matchingCard=cards.find(card=>{
+    return card.querySelector('h2')?.textContent.trim().toLowerCase()===title;
+  });
+
+const watchedTitle =
+  matchingCard
+    ? watched.has(matchingCard.dataset.id)
+    : false;
+
+console.log(title, matchingCard?.dataset.id, watchedTitle);
+
+  chip.classList.toggle('watched-chip', watchedTitle);
+
+  if(watchedTitle){
+    watchedCount++;
+  }
+});
+
+    progress.textContent=`${watchedCount} / ${total} titles`;
+  });
+}
+function showCharacter(character){
+  selectedCharacter=character;
+
+  characterCards.forEach(card=>{
+    card.hidden = card.dataset.character !== character;
+  });
+
+  characterButtons.forEach(button=>{
+    button.classList.toggle('active', button.dataset.characterButton === character);
+  });
+}
 function setTab(newTab){
   tab=newTab;
+
   qs('unwatchedTab').classList.toggle('active',tab==='unwatched');
   qs('watchedTab').classList.toggle('active',tab==='watched');
   qs('skippingTab').classList.toggle('active',tab==='skipping');
-  render();
+  qs('charactersTab').classList.toggle('active',tab==='characters');
+
+qs('list').hidden = tab==='characters';
+qs('charactersPage').hidden = tab!=='characters';
+
+if(tab==='characters'){
+  showCharacter(selectedCharacter);
+}
+
+render();
 }
 
 qs('unwatchedTab').onclick=()=>setTab('unwatched');
 qs('watchedTab').onclick=()=>setTab('watched');
 qs('skippingTab').onclick=()=>setTab('skipping');
+qs('charactersTab').onclick=()=>setTab('characters');
+characterButtons.forEach(button=>{
+  button.onclick=()=>{
+    showCharacter(button.dataset.characterButton);
+  };
+});
 
 cards.forEach(card=>{
   card.querySelector('.watch').onclick=()=>{
@@ -1267,17 +2515,6 @@ cards.forEach(card=>{
 });
 
 ['search','priority','phase'].forEach(id=>qs(id).addEventListener('input',render));
-
-qs('reset').onclick=()=>{
-  if(confirm('Reset your watched and skipped lists?')){
-    watched.clear();
-    skipped.clear();
-    save();
-    render();
-  }
-};
-
-qs('top').onclick=()=>scrollTo({top:0,behavior:'smooth'});
 
 render();
 })();
