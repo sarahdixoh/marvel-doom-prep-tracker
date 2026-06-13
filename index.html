@@ -90,9 +90,21 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 .phase6{color:#ff7f7f;font-weight:700}
 @media(min-width:800px){body{max-width:860px;margin:auto} header{position:static}}
 @media(max-width:800px){
+
   .filters{
-    grid-template-columns:1fr;
+
+    grid-template-columns:1fr !important;
+
   }
+
+  .filters select{
+
+    width:100%;
+
+    min-width:0;
+
+  }
+
 }
 </style>
 </head>
