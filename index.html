@@ -234,6 +234,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
   background:#ffe8ee;
   border-left:6px solid #ff7f7f;
 }
+.xmen-card{
+  background:#f1f2f4;
+  border-left:6px solid #7b8190;
+}
 .empty{text-align:center;color:var(--muted);padding:50px 10px} 
 .phase1{color:#c9a0ff;font-weight:700}
 .phase2{color:#7ab8ff;font-weight:700}
@@ -241,6 +245,7 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 .phase4{color:#ffd76f;font-weight:700}
 .phase5{color:#ffb26b;font-weight:700}
 .phase6{color:#ff7f7f;font-weight:700}
+.xmen{color:#7b8190;font-weight:700}
 @media(min-width:800px){body{max-width:860px;margin:auto} header{position:static}}
 @media(max-width:800px){
   .filters{
@@ -299,25 +304,207 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <button id="backupTracking" type="button">💾 Backup tracking</button>
 <input id="search" placeholder="Search titles or characters" autocomplete="off">
-<div class="filters"><select id="priority"><option>All priorities</option><option>Vital</option><option>Helpful</option><option>Skippable</option></select><select id="phase">
 
-  <option>All phases</option>
+<div class="filters">
+  <select id="priority">
+    <option>All priorities</option>
+    <option>Vital</option>
+    <option>Helpful</option>
+    <option>Skippable</option>
+  </select>
 
-  <option value="Phase 1">🛠️ Origins & Heroes (P1)</option>
+  <select id="phase">
+    <option>All phases</option>
 
-  <option value="Phase 2">🌍 Building the Team (P2)</option>
-
-  <option value="Phase 3">💎 The Infinity Saga (P3)</option>
-
-  <option value="Phase 4">🌌 After Endgame (P4)</option>
-
-  <option value="Phase 5">🌀 Multiverse Madness (P5)</option>
-
-  <option value="Phase 6">👑 Doom Approaches (P6)</option>
-
-</select></div>
+    <option value="Phase 1">🛠️ Origins & Heroes (P1)</option>
+    <option value="Phase 2">🌍 Building the Team (P2)</option>
+    <option value="Phase 3">💎 The Infinity Saga (P3)</option>
+    <option value="Phase 4">🌌 After Endgame (P4)</option>
+    <option value="Phase 5">🌀 Multiverse Madness (P5)</option>
+    <option value="Phase 6">👑 Doom Approaches (P6)</option>
+    <option value="X-Men">🧬 X-Men Legacy</option>
+  </select>
+</div>
 <p class="note">Priority is a best-effort “will this help before Doom?” rating. Marvel may still throw a chair through the timeline, as is tradition.</p>
 <section id="list">
+  <article class="card xmen-card" data-runtime="104" data-id="61" data-title="x-men" data-chars="charles xavier professor x logan wolverine erik lehnsherr magneto jean grey scott summers cyclops storm rogue mystique sabretooth" data-priority="Vital" data-phase="X-Men" data-watched="false">
+  <div class="card-top">
+    <div class="actions">
+      <button class="watch" aria-label="Mark X-Men watched">✓</button>
+      <button class="skip" aria-label="Skip title">✕</button>
+    </div>
+
+    <img class="poster-thumb" src="posters/x-men.webp" alt="X-Men poster">
+
+    <div class="grow">
+      <h2>X-Men</h2>
+      <p>2000 · Film · <span class="xmen">🧬 X-Men Legacy</span></p>
+    </div>
+
+    <span class="badge vital">Vital</span>
+  </div>
+
+  <details>
+    <summary>Details</summary>
+
+    <img class="poster-large" src="posters/x-men.webp" alt="X-Men poster">
+
+    <h3>Characters</h3>
+    <div class="chips">
+      <span data-character-link="charles-xavier">Charles Xavier</span>
+      <span data-character-link="logan">Logan / Wolverine</span>
+      <span data-character-link="erik-lehnsherr">Erik Lehnsherr / Magneto</span>
+      <span data-character-link="jean-grey">Jean Grey</span>
+      <span data-character-link="scott-summers">Scott Summers / Cyclops</span>
+      <span data-character-link="storm">Storm</span>
+      <span data-character-link="rogue">Rogue</span>
+      <span data-character-link="mystique">Mystique</span>
+      <span data-character-link="sabretooth">Sabretooth</span>
+    </div>
+
+    <h3>Non-spoilery summary</h3>
+    <p>Mutants with extraordinary abilities are caught between two opposing visions for how their kind should coexist with humanity.</p>
+
+    <h3>Doom prep note</h3>
+    <p>The foundation of the original Fox X-Men universe. Introduces Charles Xavier, Magneto, Cyclops, Mystique and the central conflict between mutants and humanity, making it essential groundwork for the returning X-Men characters in Doomsday.</p>
+  </details>
+</article>
+<article class="card xmen-card" data-runtime="134" data-id="62" data-title="x2: x-men united" data-chars="charles xavier professor x logan wolverine erik lehnsherr magneto jean grey scott summers cyclops storm rogue mystique nightcrawler kurt wagner bobby drake iceman john allerdyce pyro william stryker lady deathstrike yuriko oyama" data-priority="Vital" data-phase="X-Men" data-watched="false">
+  <div class="card-top">
+    <div class="actions">
+      <button class="watch" aria-label="Mark X2: X-Men United watched">✓</button>
+      <button class="skip" aria-label="Skip title">✕</button>
+    </div>
+
+    <img class="poster-thumb" src="posters/x2-x-men-united.webp" alt="X2: X-Men United poster">
+
+    <div class="grow">
+      <h2>X2: X-Men United</h2>
+      <p>2003 · Film · <span class="xmen">🧬 X-Men Legacy</span></p>
+    </div>
+
+    <span class="badge vital">Vital</span>
+  </div>
+
+  <details>
+    <summary>Details</summary>
+
+    <img class="poster-large" src="posters/x2-x-men-united.webp" alt="X2: X-Men United poster">
+
+    <h3>Characters</h3>
+    <div class="chips">
+      <span data-character-link="charles-xavier">Charles Xavier</span>
+      <span data-character-link="logan">Logan / Wolverine</span>
+      <span data-character-link="erik-lehnsherr">Erik Lehnsherr / Magneto</span>
+      <span data-character-link="jean-grey">Jean Grey</span>
+      <span data-character-link="scott-summers">Scott Summers / Cyclops</span>
+      <span data-character-link="storm">Storm</span>
+      <span data-character-link="rogue">Rogue</span>
+      <span data-character-link="mystique">Mystique</span>
+      <span data-character-link="nightcrawler">Kurt Wagner / Nightcrawler</span>
+      <span data-character-link="bobby-drake">Bobby Drake / Iceman</span>
+      <span data-character-link="john-allerdyce">John Allerdyce / Pyro</span>
+      <span data-character-link="william-stryker">William Stryker</span>
+      <span data-character-link="lady-deathstrike">Lady Deathstrike</span>
+    </div>
+
+    <h3>Non-spoilery summary</h3>
+    <p>After an attack heightens fear of mutants, the X-Men face a powerful human threat that forces old enemies to reconsider where their loyalties lie.</p>
+
+    <h3>Doom prep note</h3>
+    <p>Deepens the original X-Men team dynamics and the relationship between Xavier and Magneto, while introducing Nightcrawler and expanding the mutant-versus-human conflict. Particularly useful preparation for the returning original-film X-Men in Doomsday.</p>
+  </details>
+</article>
+<article class="card xmen-card" data-runtime="104" data-id="63" data-title="x-men: the last stand" data-chars="charles xavier professor x logan wolverine erik lehnsherr magneto jean grey phoenix scott summers cyclops storm rogue mystique hank mccoy beast bobby drake iceman kitty pryde shadowcat warren worthington angel john allerdyce pyro juggernaut colossus" data-priority="Vital" data-phase="X-Men" data-watched="false">
+  <div class="card-top">
+    <div class="actions">
+      <button class="watch" aria-label="Mark X-Men: The Last Stand watched">✓</button>
+      <button class="skip" aria-label="Skip title">✕</button>
+    </div>
+
+    <img class="poster-thumb" src="posters/x-men-the-last-stand.webp" alt="X-Men: The Last Stand poster">
+
+    <div class="grow">
+      <h2>X-Men: The Last Stand</h2>
+      <p>2006 · Film · <span class="xmen">🧬 X-Men Legacy</span></p>
+    </div>
+
+    <span class="badge vital">Vital</span>
+  </div>
+
+  <details>
+    <summary>Details</summary>
+
+    <img class="poster-large" src="posters/x-men-the-last-stand.webp" alt="X-Men: The Last Stand poster">
+
+    <h3>Characters</h3>
+    <div class="chips">
+      <span data-character-link="charles-xavier">Charles Xavier</span>
+      <span data-character-link="logan">Logan / Wolverine</span>
+      <span data-character-link="erik-lehnsherr">Erik Lehnsherr / Magneto</span>
+      <span data-character-link="jean-grey">Jean Grey</span>
+      <span data-character-link="scott-summers">Scott Summers / Cyclops</span>
+      <span data-character-link="storm">Storm</span>
+      <span data-character-link="rogue">Rogue</span>
+      <span data-character-link="mystique">Mystique</span>
+      <span data-character-link="hank-mccoy">Hank McCoy / Beast</span>
+      <span data-character-link="bobby-drake">Bobby Drake / Iceman</span>
+      <span data-character-link="kitty-pryde">Kitty Pryde / Shadowcat</span>
+      <span data-character-link="warren-worthington">Warren Worthington / Angel</span>
+      <span data-character-link="john-allerdyce">John Allerdyce / Pyro</span>
+      <span data-character-link="juggernaut">Juggernaut</span>
+      <span data-character-link="colossus">Colossus</span>
+    </div>
+
+    <h3>Non-spoilery summary</h3>
+    <p>A proposed medical treatment for mutation divides both humans and mutants, while a powerful and unstable threat forces the X-Men into an escalating conflict.</p>
+
+    <h3>Doom prep note</h3>
+    <p>Completes the original X-Men trilogy and develops several of the Fox characters most relevant to Doomsday, including Xavier, Magneto, Cyclops and Mystique. It also introduces Hank McCoy / Beast in the form later carried forward into the wider multiverse story.</p>
+  </details>
+</article>
+<article class="card xmen-card" data-runtime="107" data-id="64" data-title="x-men origins: wolverine" data-chars="logan wolverine victor creed sabretooth william stryker wade wilson deadpool gambit remy lebeau kayla silverfox john wraith blob fred dukes cyclops scott summers" data-priority="Skippable" data-phase="X-Men" data-watched="false">
+  <div class="card-top">
+    <div class="actions">
+      <button class="watch" aria-label="Mark X-Men Origins: Wolverine watched">✓</button>
+      <button class="skip" aria-label="Skip title">✕</button>
+    </div>
+
+    <img class="poster-thumb" src="posters/x-men-origins-wolverine.webp" alt="X-Men Origins: Wolverine poster">
+
+    <div class="grow">
+      <h2>X-Men Origins: Wolverine</h2>
+      <p>2009 · Film · <span class="xmen">🧬 X-Men Legacy</span></p>
+    </div>
+
+    <span class="badge skippable">Skippable</span>
+  </div>
+
+  <details>
+    <summary>Details</summary>
+
+    <img class="poster-large" src="posters/x-men-origins-wolverine.webp" alt="X-Men Origins: Wolverine poster">
+
+    <h3>Characters</h3>
+    <div class="chips">
+      <span data-character-link="logan">Logan / Wolverine</span>
+      <span data-character-link="victor-creed">Victor Creed / Sabretooth</span>
+      <span data-character-link="william-stryker">William Stryker</span>
+      <span data-character-link="wade-wilson">Wade Wilson</span>
+      <span data-character-link="gambit">Remy LeBeau / Gambit</span>
+      <span data-character-link="kayla-silverfox">Kayla Silverfox</span>
+      <span data-character-link="john-wraith">John Wraith</span>
+      <span data-character-link="fred-dukes">Fred Dukes / Blob</span>
+      <span data-character-link="scott-summers">Scott Summers / Cyclops</span>
+    </div>
+
+    <h3>Non-spoilery summary</h3>
+    <p>Logan's violent past, complicated family history and transformation into Wolverine are explored as he becomes entangled with a secret military programme.</p>
+
+    <h3>Doom prep note</h3>
+    <p>Provides Wolverine backstory and an early version of Wade Wilson, but its continuity is messy and it adds very little that is necessary for Doomsday. Safe to skip unless you want the full Fox X-Men experience.</p>
+  </details>
+</article>
 <article class="card phase1-card" data-runtime="126" data-id="0" data-title="iron man" data-chars="tony stark pepper potts james rhodes obadiah stane nick fury" data-priority="Helpful" data-phase="Phase 1" data-watched="false">  <div class="card-top">
     <div class="actions"><button class="watch" aria-label="Mark Iron Man watched">✓</button><button class="skip" aria-label="Skip title">✕</button></div>
     <img class="poster-thumb" src="posters/iron-man.webp" alt="Iron Man poster">
@@ -335,6 +522,7 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Starts the MCU and Tony&#x27;s legacy, useful context for why Avengers stories keep orbiting Stark tech and consequences.</p>
   </details>
 </article>
+
 <article class="card phase1-card" data-runtime="112" data-id="1" data-title="the incredible hulk" data-chars="bruce banner betty ross thaddeus ross emil blonsky" data-priority="Skippable" data-phase="Phase 1" data-watched="false">
   <div class="card-top">
     <div class="actions"><button class="watch" aria-label="Mark The Incredible Hulk watched">✓</button><button class="skip" aria-label="Skip title">✕</button></div>
@@ -375,6 +563,49 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Characters</h3><div class="chips"><span data-character-link="thor">Thor</span><span data-character-link="loki">Loki</span><span data-character-link="jane-foster">Jane Foster</span><span data-character-link="odin">Odin</span><span data-character-link="frigga">Frigga</span><span data-character-link="heimdall">Heimdall</span><span data-character-link="clint-barton">Clint Barton</span></div>
     <h3>Non-spoilery summary</h3><p>An arrogant prince from Asgard is sent to Earth and has to learn what kind of hero he wants to become.</p>
     <h3>Doom prep note</h3><p>Introduces Thor, Loki and cosmic mythology that keeps mattering.</p>
+  </details>
+</article>
+<article class="card xmen-card" data-runtime="132" data-id="65" data-title="x-men: first class" data-chars="charles xavier professor x erik lehnsherr magneto raven darkholme mystique hank mccoy beast sebastian shaw emma frost moira mactaggert alex summers havok sean cassidy banshee azazel" data-priority="Helpful" data-phase="X-Men" data-watched="false">
+  <div class="card-top">
+    <div class="actions">
+      <button class="watch" aria-label="Mark X-Men: First Class watched">✓</button>
+      <button class="skip" aria-label="Skip title">✕</button>
+    </div>
+
+    <img class="poster-thumb" src="posters/x-men-first-class.webp" alt="X-Men: First Class poster">
+
+    <div class="grow">
+      <h2>X-Men: First Class</h2>
+      <p>2011 · Film · <span class="xmen">🧬 X-Men Legacy</span></p>
+    </div>
+
+    <span class="badge helpful">Helpful</span>
+  </div>
+
+  <details>
+    <summary>Details</summary>
+
+    <img class="poster-large" src="posters/x-men-first-class.webp" alt="X-Men: First Class poster">
+
+    <h3>Characters</h3>
+    <div class="chips">
+      <span data-character-link="charles-xavier">Charles Xavier</span>
+      <span data-character-link="erik-lehnsherr">Erik Lehnsherr / Magneto</span>
+      <span data-character-link="mystique">Raven Darkhölme / Mystique</span>
+      <span data-character-link="hank-mccoy">Hank McCoy / Beast</span>
+      <span data-character-link="sebastian-shaw">Sebastian Shaw</span>
+      <span data-character-link="emma-frost">Emma Frost</span>
+      <span data-character-link="moira-mactaggert">Moira MacTaggert</span>
+      <span data-character-link="alex-summers">Alex Summers / Havok</span>
+      <span data-character-link="sean-cassidy">Sean Cassidy / Banshee</span>
+      <span data-character-link="azazel">Azazel</span>
+    </div>
+
+    <h3>Non-spoilery summary</h3>
+    <p>During the Cold War, a young Charles Xavier and Erik Lehnsherr bring together a group of mutants while confronting a threat with deeply personal ties to Erik's past.</p>
+
+    <h3>Doom prep note</h3>
+    <p>Explores the origins of Xavier and Magneto's relationship and the foundations of the X-Men. The younger cast is not the main group returning for Doomsday, but their history becomes important context for Days of Future Past and the wider Fox X-Men timeline.</p>
   </details>
 </article>
 <article class="card phase1-card" data-runtime="124" data-id="4" data-title="captain america: the first avenger" data-chars="steve rogers peggy carter bucky barnes red skull howard stark" data-priority="Helpful" data-phase="Phase 1" data-watched="false">
@@ -419,6 +650,47 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Strong Tony character context and consequences from Avengers.</p>
   </details>
 </article>
+<article class="card xmen-card" data-runtime="126" data-id="66" data-title="the wolverine" data-chars="logan wolverine yukio mariko yashida shingen yashida ichiro yashida silver samurai viper dr green harada jean grey" data-priority="Helpful" data-phase="X-Men" data-watched="false">
+  <div class="card-top">
+    <div class="actions">
+      <button class="watch" aria-label="Mark The Wolverine watched">✓</button>
+      <button class="skip" aria-label="Skip title">✕</button>
+    </div>
+
+    <img class="poster-thumb" src="posters/the-wolverine.webp" alt="The Wolverine poster">
+
+    <div class="grow">
+      <h2>The Wolverine</h2>
+      <p>2013 · Film · <span class="xmen">🧬 X-Men Legacy</span></p>
+    </div>
+
+    <span class="badge helpful">Helpful</span>
+  </div>
+
+  <details>
+    <summary>Details</summary>
+
+    <img class="poster-large" src="posters/the-wolverine.webp" alt="The Wolverine poster">
+
+    <h3>Characters</h3>
+    <div class="chips">
+      <span data-character-link="logan">Logan / Wolverine</span>
+      <span data-character-link="yukio">Yukio</span>
+      <span data-character-link="mariko-yashida">Mariko Yashida</span>
+      <span data-character-link="shingen-yashida">Shingen Yashida</span>
+      <span data-character-link="ichiro-yashida">Ichirō Yashida / Silver Samurai</span>
+      <span data-character-link="viper">Viper / Dr Green</span>
+      <span data-character-link="harada">Harada</span>
+      <span data-character-link="jean-grey">Jean Grey</span>
+    </div>
+
+    <h3>Non-spoilery summary</h3>
+    <p>Logan travels to Japan and becomes drawn into a dangerous family conflict while confronting grief, mortality and what his extraordinary healing ability means for his future.</p>
+
+    <h3>Doom prep note</h3>
+    <p>Continues Logan's story after The Last Stand and provides useful connective tissue between the original X-Men trilogy and Days of Future Past. Not essential on its own, but helpful for understanding where Wolverine is emotionally and chronologically before the Fox timeline becomes very multiverse-shaped.</p>
+  </details>
+</article>
 <article class="card phase2-card" data-runtime="112" data-id="7" data-title="thor: the dark world" data-chars="thor loki jane foster frigga heimdall malekith" data-priority="Skippable" data-phase="Phase 2" data-watched="false">
   <div class="card-top">
     <div class="actions"><button class="watch" aria-label="Mark Thor: The Dark World watched">✓</button><button class="skip" aria-label="Skip title">✕</button></div>
@@ -445,6 +717,57 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Characters</h3><div class="chips"><span data-character-link="steve-rogers">Steve Rogers</span><span data-character-link="natasha-romanoff">Natasha Romanoff</span><span data-character-link="bucky-barnes">Bucky Barnes</span><span data-character-link="sam-wilson">Sam Wilson</span><span data-character-link="nick-fury">Nick Fury</span><span data-character-link="maria-hill">Maria Hill</span></div>
     <h3>Non-spoilery summary</h3><p>Steve uncovers a conspiracy that changes his trust in the institutions around him.</p>
     <h3>Doom prep note</h3><p>Major SHIELD/HYDRA fallout and key character relationships.</p>
+  </details>
+</article>
+
+<article class="card xmen-card" data-runtime="132" data-id="67" data-title="x-men: days of future past" data-chars="logan wolverine charles xavier professor x erik lehnsherr magneto raven darkholme mystique hank mccoy beast kitty pryde shadowcat storm bobby drake iceman peter maximoff quicksilver bolivar trask bishop colossus blink warpath sunspot alex summers havok william stryker" data-priority="Vital" data-phase="X-Men" data-watched="false">
+  <div class="card-top">
+    <div class="actions">
+      <button class="watch" aria-label="Mark X-Men: Days of Future Past watched">✓</button>
+      <button class="skip" aria-label="Skip title">✕</button>
+    </div>
+
+    <img class="poster-thumb" src="posters/x-men-days-of-future-past.webp" alt="X-Men: Days of Future Past poster">
+
+    <div class="grow">
+      <h2>X-Men: Days of Future Past</h2>
+      <p>2014 · Film · <span class="xmen">🧬 X-Men Legacy</span></p>
+    </div>
+
+    <span class="badge vital">Vital</span>
+  </div>
+
+  <details>
+    <summary>Details</summary>
+
+    <img class="poster-large" src="posters/x-men-days-of-future-past.webp" alt="X-Men: Days of Future Past poster">
+
+    <h3>Characters</h3>
+    <div class="chips">
+      <span data-character-link="logan">Logan / Wolverine</span>
+      <span data-character-link="charles-xavier">Charles Xavier</span>
+      <span data-character-link="erik-lehnsherr">Erik Lehnsherr / Magneto</span>
+      <span data-character-link="mystique">Raven Darkhölme / Mystique</span>
+      <span data-character-link="hank-mccoy">Hank McCoy / Beast</span>
+      <span data-character-link="kitty-pryde">Kitty Pryde / Shadowcat</span>
+      <span data-character-link="storm">Storm</span>
+      <span data-character-link="bobby-drake">Bobby Drake / Iceman</span>
+      <span data-character-link="peter-maximoff">Peter Maximoff / Quicksilver</span>
+      <span data-character-link="bolivar-trask">Bolivar Trask</span>
+      <span data-character-link="bishop">Bishop</span>
+      <span data-character-link="colossus">Colossus</span>
+      <span data-character-link="blink">Blink</span>
+      <span data-character-link="warpath">Warpath</span>
+      <span data-character-link="sunspot">Sunspot</span>
+      <span data-character-link="alex-summers">Alex Summers / Havok</span>
+      <span data-character-link="william-stryker">William Stryker</span>
+    </div>
+
+    <h3>Non-spoilery summary</h3>
+    <p>Facing a catastrophic future, the X-Men attempt to change a pivotal moment in history, bringing together characters from both generations of the Fox mutant universe.</p>
+
+    <h3>Doom prep note</h3>
+    <p>One of the most important Fox X-Men films for Doomsday prep. It connects the original and younger X-Men casts, introduces the Sentinels as a major threat, and makes timeline alteration central to the story. Excellent groundwork for understanding how the Fox universe handles alternate histories, changed realities and returning versions of familiar characters.</p>
   </details>
 </article>
 <article class="card phase2-card" data-runtime="121" data-id="9" data-title="guardians of the galaxy" data-chars="peter quill gamora drax rocket groot ronan nebula thanos" data-priority="Helpful" data-phase="Phase 2" data-watched="false">
@@ -503,6 +826,47 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Huge Avengers turning point and major introductions.</p>
   </details>
 </article>
+<article class="card xmen-card" data-runtime="108" data-id="68" data-title="deadpool" data-chars="wade wilson deadpool vanessa carlysle colossus negasonic teenage warhead ellie phimister ajax francis freeman angel dust weasel blind al" data-priority="Helpful" data-phase="X-Men" data-watched="false">
+  <div class="card-top">
+    <div class="actions">
+      <button class="watch" aria-label="Mark Deadpool watched">✓</button>
+      <button class="skip" aria-label="Skip title">✕</button>
+    </div>
+
+    <img class="poster-thumb" src="posters/deadpool.webp" alt="Deadpool poster">
+
+    <div class="grow">
+      <h2>Deadpool</h2>
+      <p>2016 · Film · <span class="xmen">🧬 X-Men Legacy</span></p>
+    </div>
+
+    <span class="badge helpful">Helpful</span>
+  </div>
+
+  <details>
+    <summary>Details</summary>
+
+    <img class="poster-large" src="posters/deadpool.webp" alt="Deadpool poster">
+
+    <h3>Characters</h3>
+    <div class="chips">
+      <span data-character-link="wade-wilson">Wade Wilson / Deadpool</span>
+      <span data-character-link="vanessa-carlysle">Vanessa Carlysle</span>
+      <span data-character-link="colossus">Colossus</span>
+      <span data-character-link="negasonic-teenage-warhead">Negasonic Teenage Warhead</span>
+      <span data-character-link="ajax">Ajax / Francis Freeman</span>
+      <span data-character-link="angel-dust">Angel Dust</span>
+      <span data-character-link="weasel">Weasel</span>
+      <span data-character-link="blind-al">Blind Al</span>
+    </div>
+
+    <h3>Non-spoilery summary</h3>
+    <p>After a desperate attempt to cure a serious illness leaves him with extraordinary healing abilities, Wade Wilson adopts the identity of Deadpool and goes after the people responsible.</p>
+
+    <h3>Doom prep note</h3>
+    <p>Establishes Wade Wilson and his corner of the Fox mutant universe, including his connections to the X-Men. Most useful as groundwork for Deadpool & Wolverine and the way Fox characters eventually cross into the wider Marvel multiverse.</p>
+  </details>
+</article>
 <article class="card phase3-card" data-runtime="115" data-id="13" data-title="doctor strange" data-chars="stephen strange wong christine palmer the ancient one mordo kaecilius" data-priority="Vital" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <div class="actions"><button class="watch" aria-label="Mark Doctor Strange watched">✓</button><button class="skip" aria-label="Skip title">✕</button></div>
@@ -517,6 +881,53 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Introduces magic, the multiverse-adjacent rules and Doctor Strange.</p>
   </details>
 </article>
+<article class="card xmen-card" data-runtime="144" data-id="69" data-title="x-men: apocalypse" data-chars="charles xavier professor x erik lehnsherr magneto raven darkholme mystique hank mccoy beast jean grey scott summers cyclops kurt wagner nightcrawler peter maximoff quicksilver apocalypse en sabah nur moira mactaggert alex summers havok storm ororo munroe psylocke betsy braddock angel warren worthington" data-priority="Helpful" data-phase="X-Men" data-watched="false">
+  <div class="card-top">
+    <div class="actions">
+      <button class="watch" aria-label="Mark X-Men: Apocalypse watched">✓</button>
+      <button class="skip" aria-label="Skip title">✕</button>
+    </div>
+
+    <img class="poster-thumb" src="posters/x-men-apocalypse.webp" alt="X-Men: Apocalypse poster">
+
+    <div class="grow">
+      <h2>X-Men: Apocalypse</h2>
+      <p>2016 · Film · <span class="xmen">🧬 X-Men Legacy</span></p>
+    </div>
+
+    <span class="badge helpful">Helpful</span>
+  </div>
+
+  <details>
+    <summary>Details</summary>
+
+    <img class="poster-large" src="posters/x-men-apocalypse.webp" alt="X-Men: Apocalypse poster">
+
+    <h3>Characters</h3>
+    <div class="chips">
+      <span data-character-link="charles-xavier">Charles Xavier</span>
+      <span data-character-link="erik-lehnsherr">Erik Lehnsherr / Magneto</span>
+      <span data-character-link="mystique">Raven Darkhölme / Mystique</span>
+      <span data-character-link="hank-mccoy">Hank McCoy / Beast</span>
+      <span data-character-link="jean-grey">Jean Grey</span>
+      <span data-character-link="scott-summers">Scott Summers / Cyclops</span>
+      <span data-character-link="nightcrawler">Kurt Wagner / Nightcrawler</span>
+      <span data-character-link="peter-maximoff">Peter Maximoff / Quicksilver</span>
+      <span data-character-link="apocalypse">En Sabah Nur / Apocalypse</span>
+      <span data-character-link="moira-mactaggert">Moira MacTaggert</span>
+      <span data-character-link="alex-summers">Alex Summers / Havok</span>
+      <span data-character-link="storm">Ororo Munroe / Storm</span>
+      <span data-character-link="psylocke">Betsy Braddock / Psylocke</span>
+      <span data-character-link="warren-worthington">Warren Worthington / Angel</span>
+    </div>
+
+    <h3>Non-spoilery summary</h3>
+    <p>An ancient and immensely powerful mutant re-emerges into the modern world, forcing Xavier's growing group of young mutants to face a threat unlike anything they have encountered before.</p>
+
+    <h3>Doom prep note</h3>
+    <p>Expands the younger X-Men generation and gives more background to Xavier, Magneto, Cyclops, Beast and Nightcrawler. Helpful for understanding the broader Fox mutant history, although these younger versions are less directly relevant to Doomsday than the original-film cast.</p>
+  </details>
+</article>
 <article class="card phase3-card" data-runtime="136" data-id="14" data-title="guardians of the galaxy vol. 2" data-chars="peter quill gamora drax rocket groot nebula yondu mantis" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <div class="actions"><button class="watch" aria-label="Mark Guardians of the Galaxy Vol. 2 watched">✓</button><button class="skip" aria-label="Skip title">✕</button></div>
@@ -529,6 +940,46 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Characters</h3><div class="chips"><span data-character-link="peter-quill">Peter Quill</span><span data-character-link="gamora">Gamora</span><span data-character-link="drax">Drax</span><span data-character-link="rocket">Rocket</span><span data-character-link="groot">Groot</span><span data-character-link="nebula">Nebula</span><span data-character-link="yondu">Yondu</span><span data-character-link="mantis">Mantis</span></div>
     <h3>Non-spoilery summary</h3><p>The Guardians face questions about family, loyalty and where they belong.</p>
     <h3>Doom prep note</h3><p>Good Guardians and Nebula context before later team-ups.</p>
+  </details>
+</article>
+<article class="card xmen-card" data-runtime="137" data-id="70" data-title="logan" data-chars="logan wolverine charles xavier professor x laura kinney x-23 caliban donald pierce gabriela lopez zander rice" data-priority="Helpful" data-phase="X-Men" data-watched="false">
+  <div class="card-top">
+    <div class="actions">
+      <button class="watch" aria-label="Mark Logan watched">✓</button>
+      <button class="skip" aria-label="Skip title">✕</button>
+    </div>
+
+    <img class="poster-thumb" src="posters/logan.webp" alt="Logan poster">
+
+    <div class="grow">
+      <h2>Logan</h2>
+      <p>2017 · Film · <span class="xmen">🧬 X-Men Legacy</span></p>
+    </div>
+
+    <span class="badge helpful">Helpful</span>
+  </div>
+
+  <details>
+    <summary>Details</summary>
+
+    <img class="poster-large" src="posters/logan.webp" alt="Logan poster">
+
+    <h3>Characters</h3>
+    <div class="chips">
+      <span data-character-link="logan">Logan / Wolverine</span>
+      <span data-character-link="charles-xavier">Charles Xavier</span>
+      <span data-character-link="laura-kinney">Laura Kinney / X-23</span>
+      <span data-character-link="caliban">Caliban</span>
+      <span data-character-link="donald-pierce">Donald Pierce</span>
+      <span data-character-link="gabriela-lopez">Gabriela López</span>
+      <span data-character-link="zander-rice">Zander Rice</span>
+    </div>
+
+    <h3>Non-spoilery summary</h3>
+    <p>In a bleak future where mutants have become increasingly rare, an ageing Logan is drawn into protecting a young mutant while caring for an increasingly vulnerable Charles Xavier.</p>
+
+    <h3>Doom prep note</h3>
+    <p>A deeply character-focused look at Logan and Xavier that gives important emotional context to Wolverine's Fox-universe history. It is especially useful before Deadpool & Wolverine, although its direct connection to Doomsday is more limited than the core original X-Men films.</p>
   </details>
 </article>
 <article class="card phase3-card" data-runtime="133" data-id="15" data-title="spider-man: homecoming" data-chars="peter parker tony stark happy hogan may parker adrian toomes" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
@@ -587,6 +1038,51 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Essential Avengers and cosmic crossover story.</p>
   </details>
 </article>
+<article class="card xmen-card" data-runtime="119" data-id="71" data-title="deadpool 2" data-chars="wade wilson deadpool vanessa carlysle cable nathan summers domino neena thurman russell collins firefist colossus negasonic teenage warhead ellie phimister yukio juggernaut dopinder weasel peter" data-priority="Helpful" data-phase="X-Men" data-watched="false">
+  <div class="card-top">
+    <div class="actions">
+      <button class="watch" aria-label="Mark Deadpool 2 watched">✓</button>
+      <button class="skip" aria-label="Skip title">✕</button>
+    </div>
+
+    <img class="poster-thumb" src="posters/deadpool-2.webp" alt="Deadpool 2 poster">
+
+    <div class="grow">
+      <h2>Deadpool 2</h2>
+      <p>2018 · Film · <span class="xmen">🧬 X-Men Legacy</span></p>
+    </div>
+
+    <span class="badge helpful">Helpful</span>
+  </div>
+
+  <details>
+    <summary>Details</summary>
+
+    <img class="poster-large" src="posters/deadpool-2.webp" alt="Deadpool 2 poster">
+
+    <h3>Characters</h3>
+    <div class="chips">
+      <span data-character-link="wade-wilson">Wade Wilson / Deadpool</span>
+      <span data-character-link="vanessa-carlysle">Vanessa Carlysle</span>
+      <span data-character-link="cable">Nathan Summers / Cable</span>
+      <span data-character-link="domino">Neena Thurman / Domino</span>
+      <span data-character-link="russell-collins">Russell Collins / Firefist</span>
+      <span data-character-link="colossus">Colossus</span>
+      <span data-character-link="negasonic-teenage-warhead">Negasonic Teenage Warhead</span>
+      <span data-character-link="yukio">Yukio</span>
+      <span data-character-link="juggernaut">Juggernaut</span>
+      <span data-character-link="dopinder">Dopinder</span>
+      <span data-character-link="weasel">Weasel</span>
+      <span data-character-link="peter">Peter</span>
+    </div>
+
+    <h3>Non-spoilery summary</h3>
+    <p>Wade reluctantly finds himself protecting a troubled young mutant while a time-travelling soldier arrives with his own plans for the boy's future.</p>
+
+    <h3>Doom prep note</h3>
+    <p>Builds out Deadpool's Fox-universe relationships and introduces time travel and alternate outcomes into his story. Most useful as direct groundwork for Deadpool & Wolverine rather than Doomsday itself, but helpful context for Wade's eventual move into the wider Marvel multiverse.</p>
+  </details>
+</article>
 <article class="card phase3-card" data-runtime="118" data-id="19" data-title="ant-man and the wasp" data-chars="scott lang hope van dyne hank pym janet van dyne cassie lang" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <div class="actions"><button class="watch" aria-label="Mark Ant-Man and the Wasp watched">✓</button><button class="skip" aria-label="Skip title">✕</button></div>
@@ -629,6 +1125,50 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Massive status quo reset. Absolutely core.</p>
   </details>
 </article>
+<article class="card xmen-card" data-runtime="114" data-id="72" data-title="dark phoenix" data-chars="jean grey phoenix charles xavier professor x erik lehnsherr magneto raven darkholme mystique hank mccoy beast scott summers cyclops storm ororo munroe kurt wagner nightcrawler peter maximoff quicksilver vuk selene" data-priority="Skippable" data-phase="X-Men" data-watched="false">
+  <div class="card-top">
+    <div class="actions">
+      <button class="watch" aria-label="Mark Dark Phoenix watched">✓</button>
+      <button class="skip" aria-label="Skip title">✕</button>
+    </div>
+
+    <img class="poster-thumb" src="posters/dark-phoenix.webp" alt="Dark Phoenix poster">
+
+    <div class="grow">
+      <h2>Dark Phoenix</h2>
+      <p>2019 · Film · <span class="xmen">🧬 X-Men Legacy</span></p>
+    </div>
+
+    <span class="badge skippable">Skippable</span>
+  </div>
+
+  <details>
+    <summary>Details</summary>
+
+    <img class="poster-large" src="posters/dark-phoenix.webp" alt="Dark Phoenix poster">
+
+    <h3>Characters</h3>
+    <div class="chips">
+      <span data-character-link="jean-grey">Jean Grey / Phoenix</span>
+      <span data-character-link="charles-xavier">Charles Xavier</span>
+      <span data-character-link="erik-lehnsherr">Erik Lehnsherr / Magneto</span>
+      <span data-character-link="mystique">Raven Darkhölme / Mystique</span>
+      <span data-character-link="hank-mccoy">Hank McCoy / Beast</span>
+      <span data-character-link="scott-summers">Scott Summers / Cyclops</span>
+      <span data-character-link="storm">Ororo Munroe / Storm</span>
+      <span data-character-link="nightcrawler">Kurt Wagner / Nightcrawler</span>
+      <span data-character-link="peter-maximoff">Peter Maximoff / Quicksilver</span>
+      <span data-character-link="vuk">Vuk</span>
+      <span data-character-link="selene">Selene</span>
+    </div>
+
+    <h3>Non-spoilery summary</h3>
+    <p>After a mission in space goes dangerously wrong, Jean Grey begins struggling with an extraordinary new power that threatens both herself and the people closest to her.</p>
+
+    <h3>Doom prep note</h3>
+    <p>Continues the younger X-Men timeline and develops Jean, Xavier, Magneto, Cyclops, Beast and Nightcrawler, but adds little essential context for the original Fox versions returning in Doomsday. Worth including for completeness, but very safe to skip for focused Doom prep.</p>
+  </details>
+</article>
 <article class="card phase3-card" data-runtime="129" data-id="22" data-title="spider-man: far from home" data-chars="peter parker mj ned leeds nick fury quentin beck happy hogan" data-priority="Helpful" data-phase="Phase 3" data-watched="false">
   <div class="card-top">
     <div class="actions"><button class="watch" aria-label="Mark Spider-Man: Far From Home watched">✓</button><button class="skip" aria-label="Skip title">✕</button></div>
@@ -655,6 +1195,45 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Characters</h3><div class="chips"><span data-character-link="wanda-maximoff">Wanda Maximoff</span><span data-character-link="vision">Vision</span><span data-character-link="agatha-harkness">Agatha Harkness</span><span data-character-link="monica-rambeau">Monica Rambeau</span><span data-character-link="jimmy-woo">Jimmy Woo</span><span data-character-link="darcy-lewis">Darcy Lewis</span></div>
     <h3>Non-spoilery summary</h3><p>Wanda and Vision appear to live an ideal sitcom life while something stranger sits underneath.</p>
     <h3>Doom prep note</h3><p>Key Wanda, Vision, magic and grief context.</p>
+  </details>
+</article>
+<article class="card xmen-card" data-runtime="94" data-id="73" data-title="the new mutants" data-chars="dani moonstar mirage rahne sinclair wolfsbane illyana rasputin magik sam guthrie cannonball roberto da costa sunspot cecilia reyes" data-priority="Skippable" data-phase="X-Men" data-watched="false">
+  <div class="card-top">
+    <div class="actions">
+      <button class="watch" aria-label="Mark The New Mutants watched">✓</button>
+      <button class="skip" aria-label="Skip title">✕</button>
+    </div>
+
+    <img class="poster-thumb" src="posters/the-new-mutants.webp" alt="The New Mutants poster">
+
+    <div class="grow">
+      <h2>The New Mutants</h2>
+      <p>2020 · Film · <span class="xmen">🧬 X-Men Legacy</span></p>
+    </div>
+
+    <span class="badge skippable">Skippable</span>
+  </div>
+
+  <details>
+    <summary>Details</summary>
+
+    <img class="poster-large" src="posters/the-new-mutants.webp" alt="The New Mutants poster">
+
+    <h3>Characters</h3>
+    <div class="chips">
+      <span data-character-link="dani-moonstar">Dani Moonstar / Mirage</span>
+      <span data-character-link="rahne-sinclair">Rahne Sinclair / Wolfsbane</span>
+      <span data-character-link="illyana-rasputin">Illyana Rasputin / Magik</span>
+      <span data-character-link="sam-guthrie">Sam Guthrie / Cannonball</span>
+      <span data-character-link="roberto-da-costa">Roberto da Costa / Sunspot</span>
+      <span data-character-link="cecilia-reyes">Dr Cecilia Reyes</span>
+    </div>
+
+    <h3>Non-spoilery summary</h3>
+    <p>Five young mutants held inside an isolated medical facility begin confronting both their emerging abilities and the frightening forces keeping them there.</p>
+
+    <h3>Doom prep note</h3>
+    <p>A largely standalone corner of the Fox mutant universe featuring a different generation of characters. It adds very little required context for Doomsday or the returning original X-Men cast, so it is extremely safe to skip unless you want to complete the full Fox film run.</p>
   </details>
 </article>
 <article class="card phase4-card" data-runtime="300" data-id="24" data-title="the falcon and the winter soldier" data-chars="sam wilson bucky barnes john walker sharon carter zemo isaiah bradley" data-priority="Helpful" data-phase="Phase 4" data-watched="false">
@@ -1022,7 +1601,7 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Not main MCU Earth, but mutant awareness is increasingly relevant.</p>
   </details>
 </article>
-<article class="card phase5-card" data-runtime="128" data-id="50" data-title="deadpool &amp; wolverine" data-chars="deadpool wolverine paradox cassandra nova tva characters" data-priority="Vital" data-phase="Phase 5" data-watched="false">
+<article class="card phase5-card" data-runtime="128" data-id="50" data-title="deadpool &amp; wolverine" data-chars="deadpool wolverine paradox cassandra nova tva characters" data-priority="Vital" data-phase="Phase 5|X-Men" data-watched="false">
   <div class="card-top">
     <div class="actions"><button class="watch" aria-label="Mark Deadpool &amp; Wolverine watched">✓</button><button class="skip" aria-label="Skip title">✕</button></div>
     <img class="poster-thumb" src="posters/deadpool-and-wolverine.webp" alt="Deadpool & Wolverine poster">
@@ -2393,7 +2972,7 @@ if(details && !details.querySelector('.runtime-detail')){
 
     const matchQ = !q || card.dataset.title.includes(q) || card.dataset.chars.includes(q);
     const matchP = pr==='All priorities' || card.dataset.priority===pr;
-    const matchPh = ph==='All phases' || card.dataset.phase===ph;
+    const matchPh = ph==='All phases' || card.dataset.phase.split('|').includes(ph);
 
     const show=matchTab&&matchQ&&matchP&&matchPh;
     card.style.display=show?'block':'none';
