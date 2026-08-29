@@ -2416,7 +2416,15 @@ document.querySelectorAll('[data-character-link]').forEach(link=>{
   link.onclick=()=>{
     setTab('characters');
     showCharacter(link.dataset.characterLink);
-    window.scrollTo({top:0,behavior:'smooth'});
+
+    const characterCard=document.querySelector(
+      `.character-card[data-character="${link.dataset.characterLink}"]`
+    );
+
+    characterCard?.scrollIntoView({
+      behavior:'smooth',
+      block:'start'
+    });
   };
 });
 }
@@ -2506,6 +2514,15 @@ qs('charactersTab').onclick=()=>setTab('characters');
 characterButtons.forEach(button=>{
   button.onclick=()=>{
     showCharacter(button.dataset.characterButton);
+
+    const characterCard=document.querySelector(
+      `.character-card[data-character="${button.dataset.characterButton}"]`
+    );
+
+    characterCard?.scrollIntoView({
+      behavior:'smooth',
+      block:'start'
+    });
   };
 });
 
