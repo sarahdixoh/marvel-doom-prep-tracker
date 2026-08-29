@@ -297,6 +297,7 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
   <button class="tab" id="skippingTab">Skipping</button>
   <button class="tab" id="charactersTab">Characters</button>
 </div>
+<button id="backupTracking" type="button">💾 Backup tracking</button>
 <input id="search" placeholder="Search titles or characters" autocomplete="off">
 <div class="filters"><select id="priority"><option>All priorities</option><option>Vital</option><option>Helpful</option><option>Skippable</option></select><select id="phase">
 
@@ -2511,6 +2512,34 @@ qs('unwatchedTab').onclick=()=>setTab('unwatched');
 qs('watchedTab').onclick=()=>setTab('watched');
 qs('skippingTab').onclick=()=>setTab('skipping');
 qs('charactersTab').onclick=()=>setTab('characters');
+qs('backupTracking').onclick=async()=>{
+  const savedData={};
+
+  for(let i=0;i<localStorage.length;i++){
+    const key=localStorage.key(i);
+    savedData[key]=localStorage.getItem(key);
+  }
+
+  const backup=JSON.stringify({
+    site:location.origin,
+    created:new Date().toISOString(),
+    localStorage:savedData
+  },null,2);
+
+  try{
+    await navigator.clipboard.writeText(backup);
+    alert('Marvel tracker backup copied to your clipboard! 💾');
+  }catch(error){
+    const textarea=document.createElement('textarea');
+    textarea.value=backup;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+
+    alert('Marvel tracker backup copied to your clipboard! 💾');
+  }
+};
 characterButtons.forEach(button=>{
   button.onclick=()=>{
     showCharacter(button.dataset.characterButton);
