@@ -115,6 +115,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
   margin:18px 0;
 }
 
+.doomsday-status + .character-images{
+  margin-top:6px;
+}
+
 .character-images img{
   width:110px;
   height:165px;
@@ -128,6 +132,62 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
   gap:8px;
   margin:14px 0;
 }
+
+.data-tools{
+  margin:30px 0 20px;
+  padding:12px 16px;
+  background:rgba(255,255,255,.45);
+  border:1px solid var(--line);
+  border-radius:16px;
+  color:var(--muted);
+}
+
+.data-tools summary{
+  cursor:pointer;
+  font-weight:700;
+  user-select:none;
+}
+
+.data-tools-content{
+  padding-top:12px;
+}
+
+.data-tools button{
+  width:100%;
+  padding:10px 14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:white;
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.data-tools textarea{
+  width:100%;
+  min-height:90px;
+  margin-top:10px;
+  padding:10px 12px;
+  box-sizing:border-box;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:white;
+  font:inherit;
+  resize:vertical;
+}
+
+.data-tools button + textarea,
+.data-tools textarea + button{
+  margin-top:10px;
+}
+
+.tracker-version{
+  margin:10px 0 0;
+  font-size:.85rem;
+  color:var(--muted);
+  text-align:center;
+}
+
 .character-nav-section{
   margin-bottom:22px;
 }
@@ -286,6 +346,60 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 }
 }
+
+.doomsday-status{
+  display:inline-block;
+  margin:0 0 6px;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:.82rem;
+  font-weight:700;
+}
+
+.doomsday-status.confirmed{
+  background:#e4f4e7;
+  color:#27633a;
+  border:1px solid #acd8b5;
+}
+
+.doomsday-status.rumoured{
+  background:#fff3cf;
+  color:#785b00;
+  border:1px solid #ead58b;
+}
+
+.doomsday-status.context-only{
+  background:#eeeeee;
+  color:#666666;
+  border:1px solid #d2d2d2;
+}
+.doomsday-filter-section{
+  margin-bottom:18px;
+}
+
+.doomsday-filter [data-status-filter="confirmed"]{
+  background:#e4f4e7;
+  color:#27633a;
+  border-color:#acd8b5;
+}
+
+.doomsday-filter [data-status-filter="rumoured"]{
+  background:#fff3cf;
+  color:#785b00;
+  border-color:#ead58b;
+}
+
+.doomsday-filter [data-status-filter="context-only"]{
+  background:#ffffff;
+  color:#666666;
+  border-color:#d2d2d2;
+}
+
+.doomsday-filter button.active{
+  box-shadow:0 0 0 3px var(--purple);
+  font-weight:800;
+}
+
 </style>
 </head>
 <body>
@@ -302,7 +416,7 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
   <button class="tab" id="skippingTab">Skipping</button>
   <button class="tab" id="charactersTab">Characters</button>
 </div>
-<button id="backupTracking" type="button">💾 Backup tracking</button>
+
 <input id="search" placeholder="Search titles or characters" autocomplete="off">
 
 <div class="filters">
@@ -1770,6 +1884,16 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
   </details>
 </article></section>
 <section id="charactersPage" hidden>
+  <div class="doomsday-filter-section">
+  <h3>DOOMSDAY STATUS</h3>
+
+  <div class="doomsday-filter">
+    <button type="button" data-status-filter="all">All</button>
+    <button type="button" data-status-filter="confirmed">Confirmed</button>
+    <button type="button" data-status-filter="rumoured">Rumoured</button>
+    <button type="button" data-status-filter="context-only">Context Only</button>
+  </div>
+</div>
 <div class="character-nav-section">
   <h3>SHIELD & STARK</h3>
   <div class="character-nav">
@@ -1896,7 +2020,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 <div class="character-card" data-character="tony-stark">
 
     <h2>Tony Stark / Iron Man</h2>
-
+<p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
     <div class="character-images">
   <img src="characters/tony-stark.webp" alt="Tony Stark">
   <img src="characters/iron-man.webp" alt="Iron Man">
@@ -1968,6 +2094,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
   </div>
 <div class="character-card" data-character="steve-rogers">
   <h2>Steve Rogers / Captain America</h2>
+  <p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/steve-rogers.webp" alt="Steve Rogers">
     <img src="characters/captain-america.webp" alt="Captain America">
@@ -2008,6 +2137,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="thor">
   <h2>Thor / God of Thunder</h2>
+  <p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
 
   <div class="character-images">
     <img src="characters/thor.jpg" alt="Thor">
@@ -2056,7 +2188,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="bruce-banner">
   <h2>Bruce Banner / The Hulk</h2>
-
+<p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/bruce-banner.webp" alt="Bruce Banner">
     <img src="characters/hulk.jpeg" alt="Hulk">
@@ -2104,7 +2238,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="natasha-romanoff">
   <h2>Natasha Romanoff / Black Widow </h2>
-
+<p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/natasha-romanoff.jpeg" alt="Natasha Romanoff">
     <img src="characters/black-widow.webp" alt="Black Widow">
@@ -2152,7 +2288,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="clint-barton">
   <h2>Clint Barton / Hawkeye</h2>
-
+<p class="doomsday-status rumoured">
+  🟡 Doomsday status: Rumoured
+</p>
   <div class="character-images">
     <img src="characters/clint-barton.jpeg" alt="Clint Barton">
     <img src="characters/hawkeye.jpeg" alt="Hawkeye">
@@ -2199,7 +2337,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="peter-parker">
   <h2>Peter Parker / Spider-Man</h2>
-
+<p class="doomsday-status rumoured">
+  🟡 Doomsday status: Rumoured
+</p>
   <div class="character-images">
     <img src="characters/peter-parker.webp" alt="Peter Parker">
     <img src="characters/spider-man.jpeg" alt="Spider-Man">
@@ -2246,7 +2386,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="stephen-strange">
   <h2>Stephen Strange / Doctor Strange</h2>
-
+<p class="doomsday-status rumoured">
+  🟡 Doomsday status: Rumoured
+</p>
   <div class="character-images">
     <img src="characters/stephen-strange.webp" alt="Stephen Strange">
     <img src="characters/doctor-strange.webp" alt="Doctor Strange">
@@ -2292,6 +2434,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="wanda-maximoff">
   <h2>Wanda Maximoff / Scarlet Witch</h2>
+  <p class="doomsday-status rumoured">
+  🟡 Doomsday status: Rumoured
+</p>
   <div class="character-images">
     <img src="characters/wanda-maximoff.jpeg" alt="Wanda Maximoff">
     <img src="characters/scarlet-witch.webp" alt="Scarlet Witch">
@@ -2332,6 +2477,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="phil-coulson">
   <h2>Phil Coulson / Agent Coulson</h2>
+  <p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/phil-coulson.jpg" alt="Phil Coulson">
     <img src="characters/agent-coulson.jpeg" alt="Agent Coulson">
@@ -2368,6 +2516,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="loki">
   <h2>Loki / God of Mischief</h2>
+  <p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/loki.webp" alt="Loki">
     <img src="characters/god-of-mischief.webp" alt="God of Mischief">
@@ -2409,6 +2560,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="bucky-barnes">
   <h2>Bucky Barnes / The Winter Soldier</h2>
+  <p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/bucky-barnes.jpg" alt="Bucky Barnes">
     <img src="characters/winter-soldier.webp" alt="Winter Soldier">
@@ -2450,6 +2604,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="sam-wilson">
   <h2>Sam Wilson / The Falcon / Captain America</h2>
+  <p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/sam-wilson.jpeg" alt="Sam Wilson">
     <img src="characters/captain-america-sam.webp" alt="Captain America">
@@ -2492,7 +2649,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="shang-chi">
   <h2>Shang-Chi</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/shang-chi.jpeg" alt="Shang-Chi">
     <img src="characters/shang-chi-ten-rings.jpeg" alt="Shang-Chi using the Ten Rings">
@@ -2531,7 +2690,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="cassie-lang">
   <h2>Cassie Lang / Stature</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/cassie-lang.jpeg" alt="Cassie Lang">
     <img src="characters/stature.jpeg" alt="Cassie Lang as Stature">
@@ -2574,7 +2735,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="joaquin-torres">
   <h2>Joaquin Torres / Falcon</h2>
-
+  <p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/joaquin-torres.jpeg" alt="Joaquin Torres">
     <img src="characters/falcon-joaquin.jpeg" alt="Joaquin Torres as Falcon">
@@ -2610,7 +2773,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="kamala-khan">
   <h2>Kamala Khan / Ms. Marvel</h2>
-
+<p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/kamala-khan.jpeg" alt="Kamala Khan">
     <img src="characters/ms-marvel.jpeg" alt="Ms. Marvel">
@@ -2650,7 +2815,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="kate-bishop">
   <h2>Kate Bishop / Hawkeye</h2>
-
+<p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/kate-bishop.jpeg" alt="Kate Bishop">
     <img src="characters/hawkeye-kate.jpeg" alt="Kate Bishop as Hawkeye">
@@ -2688,7 +2855,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="love">
   <h2>Love</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/love.jpeg" alt="Love">
     <img src="characters/love-stormbreaker.avif" alt="Love with Stormbreaker">
@@ -2723,6 +2892,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="james-rhodes">
   <h2>James Rhodes / War Machine</h2>
+  <p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/james-rhodes.jpeg" alt="James Rhodes">
     <img src="characters/war-machine.webp" alt="War Machine">
@@ -2765,6 +2937,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="pepper-potts">
     <h2>Pepper Potts / Rescue</h2>
+    <p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/pepper-potts.jpg" alt="Pepper Potts">
     <img src="characters/rescue.jpg" alt="Rescue">
@@ -2804,6 +2979,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="wong">
   <h2>Wong / Sorcerer Supreme</h2>
+  <p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/wong.jpg" alt="Wong">
     <img src="characters/sorcerer-supreme.webp" alt="Sorcerer Supreme Wong">
@@ -2845,7 +3023,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="moon-knight">
   <h2>Marc Spector / Moon Knight</h2>
-
+<p class="doomsday-status rumoured">
+  🟡 Doomsday status: Rumoured
+</p>
   <div class="character-images">
     <img src="characters/marc-spector.jpeg" alt="Marc Spector">
     <img src="characters/moon-knight.jpeg" alt="Moon Knight">
@@ -2886,6 +3066,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="nick-fury">
   <h2>Nick Fury / Director of SHIELD</h2>
+  <p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/nick-fury.avif" alt="Nick Fury">
     <img src="characters/shield-director.webp" alt="Nick Fury Director of SHIELD">
@@ -2930,7 +3113,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="peggy-carter">
   <h2>Peggy Carter / Captain Carter</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/peggy-carter.jpeg" alt="Peggy Carter">
     <img src="characters/captain-carter.jpeg" alt="Captain Carter">
@@ -2977,7 +3162,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="peter-quill">
   <h2>Peter Quill / Star-Lord</h2>
-
+<p class="doomsday-status rumoured">
+  🟡 Doomsday status: Rumoured
+</p>
   <div class="character-images">
     <img src="characters/peter-quill.jpeg" alt="Peter Quill">
     <img src="characters/star-lord.jpeg" alt="Star-Lord">
@@ -3025,6 +3212,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="tchalla">
   <h2>T'Challa / Black Panther</h2>
+  <p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/tchalla.webp" alt="T'Challa">
     <img src="characters/black-panther.webp" alt="Black Panther">
@@ -3062,6 +3252,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="shuri">
   <h2>Shuri / Black Panther</h2>
+  <p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/shuri.webp" alt="Shuri">
     <img src="characters/black-panther-shuri.jpg" alt="Black Panther Shuri">
@@ -3098,7 +3291,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="mbaku">
   <h2>M'Baku</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/mbaku.jpeg" alt="M'Baku">
     <img src="characters/mbaku-jabari.jpeg" alt="M'Baku of the Jabari">
@@ -3139,7 +3334,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="namor">
   <h2>Namor / K'uk'ulkan</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/namor.jpeg" alt="Namor">
     <img src="characters/kukulkan.jpeg" alt="K'uk'ulkan">
@@ -3175,6 +3372,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="namora">
   <h2>Namora</h2>
+  <p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
 
   <div class="character-images">
     <img src="characters/namora.jpeg" alt="Namora">
@@ -3212,6 +3412,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="carol-danvers">
   <h2>Carol Danvers / Captain Marvel</h2>
+  <p class="doomsday-status rumoured">
+  🟡 Doomsday status: Rumoured
+</p>
   <div class="character-images">
     <img src="characters/carol-danvers.jpeg" alt="Carol Danvers">
     <img src="characters/captain-marvel.webp" alt="Captain Marvel">
@@ -3248,6 +3451,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="yelena-belova">
   <h2>Yelena Belova / Black Widow</h2>
+  <p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/yelena-belova.jpg" alt="Yelena Belova">
     <img src="characters/black-widow-yelena.webp" alt="Yelena Belova Black Widow">
@@ -3281,7 +3487,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="john-walker">
   <h2>John Walker / U.S. Agent</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/john-walker.jpeg" alt="John Walker">
     <img src="characters/us-agent.jpeg" alt="U.S. Agent">
@@ -3322,7 +3530,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="alexei-shostakov">
   <h2>Alexei Shostakov / Red Guardian</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/alexei-shostakov.jpeg" alt="Alexei Shostakov">
     <img src="characters/red-guardian.jpeg" alt="Red Guardian">
@@ -3363,7 +3573,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="bob-reynolds">
   <h2>Bob Reynolds / Sentry</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/bob-reynolds.jpeg" alt="Bob Reynolds">
     <img src="characters/sentry.jpeg" alt="Sentry">
@@ -3401,7 +3613,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="ava-starr">
   <h2>Ava Starr / Ghost</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/ava-starr.jpeg" alt="Ava Starr">
     <img src="characters/ghost.jpeg" alt="Ghost">
@@ -3442,6 +3656,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="scott-lang">
   <h2>Scott Lang / Ant-Man</h2>
+  <p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/scott-lang.webp" alt="Scott Lang">
     <img src="characters/ant-man.webp" alt="Ant-Man">
@@ -3480,6 +3697,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="vision">
   <h2>Vision / The Vision</h2>
+  <p class="doomsday-status rumoured">
+  🟡 Doomsday status: Rumoured
+</p>
   <div class="character-images">
     <img src="characters/vision.webp" alt="Vision">
     <img src="characters/white-vision.jpg" alt="White Vision">
@@ -3516,6 +3736,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="reed-richards">
   <h2>Reed Richards / Mister Fantastic</h2>
+  <p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/reed-richards.jpeg" alt="Reed Richards">
     <img src="characters/mister-fantastic.webp" alt="Mister Fantastic">
@@ -3548,7 +3771,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="sue-storm">
   <h2>Sue Storm / Invisible Woman</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/sue-storm.jpeg" alt="Sue Storm">
     <img src="characters/invisible-woman.jpeg" alt="Invisible Woman">
@@ -3585,7 +3810,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="johnny-storm">
   <h2>Johnny Storm / Human Torch</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/johnny-storm.jpeg" alt="Johnny Storm">
     <img src="characters/human-torch.jpeg" alt="Human Torch">
@@ -3621,7 +3848,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="ben-grimm">
   <h2>Ben Grimm / The Thing</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/ben-grimm.jpeg" alt="Ben Grimm">
     <img src="characters/the-thing.jpeg" alt="The Thing">
@@ -3657,7 +3886,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="franklin-richards">
   <h2>Franklin Richards</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/franklin-richards.jpeg" alt="Franklin Richards">
     <img src="characters/franklin-richards-family.jpeg" alt="Franklin Richards with the Fantastic Four">
@@ -3697,6 +3928,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="victor-von-doom">
   <h2>Victor von Doom / Doctor Doom</h2>
+  <p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/victor-von-doom.avif" alt="Victor von Doom">
     <img src="characters/doctor-doom.webp" alt="Doctor Doom">
@@ -3730,7 +3964,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </div>
 <div class="character-card" data-character="charles-xavier">
   <h2>Charles Xavier / Professor X</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/charles-xavier.jpeg" alt="Charles Xavier">
     <img src="characters/professor-x.jpeg" alt="Professor X">
@@ -3786,7 +4022,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="erik-lehnsherr">
   <h2>Erik Lehnsherr / Magneto</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/erik-lehnsherr.jpeg" alt="Erik Lehnsherr">
     <img src="characters/magneto.jpeg" alt="Magneto">
@@ -3836,7 +4074,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="logan">
   <h2>Logan / Wolverine</h2>
-
+<p class="doomsday-status rumoured">
+  🟡 Doomsday status: Rumoured
+</p>
   <div class="character-images">
     <img src="characters/logan.jpeg" alt="Logan">
     <img src="characters/wolverine.jpeg" alt="Wolverine">
@@ -3890,7 +4130,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="scott-summers">
   <h2>Scott Summers / Cyclops</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/scott-summers.jpeg" alt="Scott Summers">
     <img src="characters/cyclops.jpeg" alt="Cyclops">
@@ -3940,7 +4182,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="jean-grey">
   <h2>Jean Grey / Phoenix</h2>
-
+<p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/jean-grey.jpeg" alt="Jean Grey">
     <img src="characters/phoenix.jpeg" alt="Phoenix">
@@ -3989,7 +4233,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="storm">
   <h2>Ororo Munroe / Storm</h2>
-
+<p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/ororo-munroe.jpeg" alt="Ororo Munroe">
     <img src="characters/storm.jpeg" alt="Storm">
@@ -4036,7 +4282,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="mystique">
   <h2>Raven Darkhölme / Mystique</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/raven-darkholme.jpeg" alt="Raven Darkhölme">
     <img src="characters/mystique.jpeg" alt="Mystique">
@@ -4085,7 +4333,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="hank-mccoy">
   <h2>Hank McCoy / Beast</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/hank-mccoy.jpeg" alt="Hank McCoy">
     <img src="characters/beast.jpeg" alt="Beast">
@@ -4136,7 +4386,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="nightcrawler">
   <h2>Kurt Wagner / Nightcrawler</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/kurt-wagner.jpeg" alt="Kurt Wagner">
     <img src="characters/nightcrawler.jpeg" alt="Nightcrawler">
@@ -4180,7 +4432,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="rogue">
   <h2>Marie / Rogue</h2>
-
+<p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/marie.jpeg" alt="Marie">
     <img src="characters/rogue.jpeg" alt="Rogue">
@@ -4222,7 +4476,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="gambit">
   <h2>Remy LeBeau / Gambit</h2>
-
+<p class="doomsday-status confirmed">
+  ✅ Doomsday status: Confirmed
+</p>
   <div class="character-images">
     <img src="characters/remy-lebeau.jpeg" alt="Remy LeBeau">
     <img src="characters/gambit.jpeg" alt="Gambit">
@@ -4260,7 +4516,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="wade-wilson">
   <h2>Wade Wilson / Deadpool</h2>
-
+<p class="doomsday-status rumoured">
+  🟡 Doomsday status: Rumoured
+</p>
   <div class="character-images">
     <img src="characters/wade-wilson.jpeg" alt="Wade Wilson">
     <img src="characters/deadpool.jpeg" alt="Deadpool">
@@ -4308,7 +4566,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="laura-kinney">
   <h2>Laura Kinney / X-23</h2>
-
+<p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/laura-kinney.jpeg" alt="Laura Kinney">
     <img src="characters/x-23.jpeg" alt="X-23">
@@ -4345,7 +4605,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="peter-maximoff">
   <h2>Peter Maximoff / Quicksilver</h2>
-
+<p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/peter-maximoff.jpeg" alt="Peter Maximoff">
     <img src="characters/quicksilver.jpeg" alt="Quicksilver">
@@ -4390,7 +4652,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="kitty-pryde">
   <h2>Kitty Pryde / Shadowcat</h2>
-
+<p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/kitty-pryde.jpeg" alt="Kitty Pryde">
     <img src="characters/shadowcat.jpeg" alt="Shadowcat">
@@ -4434,7 +4698,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="bobby-drake">
   <h2>Bobby Drake / Iceman</h2>
-
+<p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/bobby-drake.jpeg" alt="Bobby Drake">
     <img src="characters/iceman.jpeg" alt="Iceman">
@@ -4476,7 +4742,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="colossus">
   <h2>Piotr Rasputin / Colossus</h2>
-
+<p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/piotr-rasputin.jpeg" alt="Piotr Rasputin">
     <img src="characters/colossus.jpeg" alt="Colossus">
@@ -4523,7 +4791,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="cable">
   <h2>Nathan Summers / Cable</h2>
-
+<p class="doomsday-status context-only">
+  ⚪ Doomsday status: Context Only
+</p>
   <div class="character-images">
     <img src="characters/nathan-summers.jpeg" alt="Nathan Summers">
     <img src="characters/cable.jpeg" alt="Cable">
@@ -4562,7 +4832,9 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 
 <div class="character-card" data-character="domino">
   <h2>Neena Thurman / Domino</h2>
-
+<p class="doomsday-status rumoured">
+  🟡 Doomsday status: Rumoured
+</p>
   <div class="character-images">
     <img src="characters/neena-thurman.jpeg" alt="Neena Thurman">
     <img src="characters/domino.jpeg" alt="Domino">
@@ -4598,7 +4870,23 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
 </section>
 <div id="empty" class="empty" hidden>No titles here. Suspiciously peaceful.</div>
 </main>
+
+<details class="data-tools">
+  <summary>⚙️ Data Tools</summary>
+
+  <div class="data-tools-content">
+    <button id="backupTracking" type="button">💾 Back up tracking</button>
+    <textarea id="restoreData" placeholder="Paste tracking backup here"></textarea>
+<button id="restoreTracking" type="button">♻️ Restore tracking</button>
+
+<button id="refreshTracker" type="button">↻ Load latest version</button>
+<p class="tracker-version">Tracker version: <span id="trackerVersion"></span></p>
+
+  </div>
+</details>
+
 <script>
+  
 (function(){
 const watchedKey='sarah-marvel-doom-watched-v1';
 const skippedKey='sarah-marvel-doom-skipped-v1';
@@ -4780,6 +5068,67 @@ function showCharacter(character){
   });
 
 }
+
+const statusButtons=[...document.querySelectorAll('[data-status-filter]')];
+let selectedStatus='all';
+
+function getCharacterStatus(character){
+  const card=characterCards.find(card=>card.dataset.character===character);
+  const badge=card?.querySelector('.doomsday-status');
+
+  if(!badge) return 'context-only';
+  if(badge.classList.contains('confirmed')) return 'confirmed';
+  if(badge.classList.contains('rumoured')) return 'rumoured';
+  return 'context-only';
+}
+
+function applyStatusFilter(){
+  characterButtons.forEach(button=>{
+    const character=button.dataset.characterButton;
+    const status=getCharacterStatus(character);
+    const matches=selectedStatus==='all' || status===selectedStatus;
+
+    button.hidden=!matches;
+  });
+
+  document.querySelectorAll('.character-nav-section').forEach(section=>{
+    const visibleButton=section.querySelector('[data-character-button]:not([hidden])');
+    section.hidden=!visibleButton;
+  });
+
+  const selectedButton=characterButtons.find(button=>{
+    return button.dataset.characterButton===selectedCharacter && !button.hidden;
+  });
+
+  if(!selectedButton){
+    const firstVisibleButton=characterButtons.find(button=>!button.hidden);
+
+    if(firstVisibleButton){
+      showCharacter(firstVisibleButton.dataset.characterButton);
+    }else{
+      characterCards.forEach(card=>{
+        card.hidden=true;
+      });
+    }
+  }
+}
+
+statusButtons.forEach(button=>{
+  button.onclick=()=>{
+    selectedStatus=button.dataset.statusFilter;
+
+    statusButtons.forEach(otherButton=>{
+      otherButton.classList.toggle('active',otherButton===button);
+    });
+
+    applyStatusFilter();
+  };
+});
+
+statusButtons[0]?.classList.add('active');
+
+applyStatusFilter();
+
 function setTab(newTab){
   tab=newTab;
 
@@ -4830,6 +5179,56 @@ qs('backupTracking').onclick=async()=>{
     alert('Marvel tracker backup copied to your clipboard! 💾');
   }
 };
+
+qs('restoreTracking').onclick=()=>{
+  const raw=qs('restoreData').value.trim();
+
+  if(!raw){
+    alert('Paste your tracking backup into the box first.');
+    return;
+  }
+
+  try{
+    const backup=JSON.parse(raw);
+
+    if(
+      !backup.localStorage ||
+      typeof backup.localStorage!=='object' ||
+      !backup.localStorage[watchedKey] ||
+      !backup.localStorage[skippedKey]
+    ){
+      throw new Error('Invalid backup');
+    }
+
+    const confirmed=confirm(
+      'Restore this backup? This will replace your current watched and skipped tracking data.'
+    );
+
+    if(!confirmed) return;
+
+    Object.entries(backup.localStorage).forEach(([key,value])=>{
+      localStorage.setItem(key,value);
+    });
+
+    alert('Tracking restored successfully! ♻️');
+    location.reload();
+
+  }catch(error){
+    alert('That does not look like a valid Marvel tracker backup.');
+  }
+};
+
+qs('refreshTracker').onclick=()=>{
+  const url=new URL(window.location.href);
+
+  url.searchParams.set('refresh',Date.now());
+
+  window.location.replace(url.toString());
+};
+
+qs('trackerVersion').textContent='29 Aug 2026';
+
+
 characterButtons.forEach(button=>{
   button.onclick=()=>{
     showCharacter(button.dataset.characterButton);
