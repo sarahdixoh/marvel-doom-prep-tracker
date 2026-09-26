@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" role="img" aria-labelledby="title desc">
+  <title id="title">VisionQuest</title>
+  <desc id="desc">A stylised purple and gold poster for Marvel Television's VisionQuest.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#170f35"/>
+      <stop offset="0.55" stop-color="#4e1f68"/>
+      <stop offset="1" stop-color="#d08a2e"/>
+    </linearGradient>
+    <radialGradient id="glow"><stop offset="0" stop-color="#f9d978" stop-opacity=".85"/><stop offset="1" stop-color="#f9d978" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="600" height="900" fill="url(#bg)"/>
+  <circle cx="300" cy="365" r="250" fill="url(#glow)"/>
+  <circle cx="300" cy="365" r="125" fill="none" stroke="#f6d46b" stroke-width="8" opacity=".8"/>
+  <path d="M300 215v300M150 365h300M210 275l180 180M390 275L210 455" stroke="#f6d46b" stroke-width="3" opacity=".55"/>
+  <text x="300" y="110" text-anchor="middle" fill="#f6d46b" font-family="Arial,Helvetica,sans-serif" font-size="28" letter-spacing="6">MARVEL TELEVISION</text>
+  <text x="300" y="650" text-anchor="middle" fill="white" font-family="Arial,Helvetica,sans-serif" font-size="58" font-weight="700" letter-spacing="3">VISION</text>
+  <text x="300" y="720" text-anchor="middle" fill="#f6d46b" font-family="Arial,Helvetica,sans-serif" font-size="44" font-weight="700" letter-spacing="8">QUEST</text>
+  <text x="300" y="810" text-anchor="middle" fill="white" font-family="Arial,Helvetica,sans-serif" font-size="20" letter-spacing="4">DISNEY+ · 2026</text>
+</svg>

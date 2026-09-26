@@ -1869,6 +1869,7 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Doom prep note</h3><p>Likely fun industry satire corner, unclear Doom relevance.</p>
   </details>
 </article>
+
 <article class="card phase6-card" data-runtime="140" data-id="spider-man-brand-new-day" data-title="spider-man: brand new day" data-chars="peter parker" data-priority="Vital" data-phase="Phase 6" data-watched="false">
   <div class="card-top">
     <div class="actions"><button class="watch" aria-label="Mark Spider-Man: Brand New Day watched">✓</button><button class="skip" aria-label="Skip title">✕</button></div>
@@ -1882,7 +1883,22 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <h3>Non-spoilery summary</h3><p>Peter continues as Spider-Man in a world that no longer knows him.</p>
     <h3>Doom prep note</h3><p>Coming before Doomsday and likely important for Peter&#x27;s status.</p>
   </details>
-</article></section>
+</article>
+<article class="card phase6-card" data-runtime="0" data-id="visionquest" data-title="visionquest" data-chars="vision ultron thomas shepard friday edith jarvis" data-priority="Vital" data-phase="Phase 6" data-watched="false">
+  <div class="card-top">
+    <div class="actions"><button class="watch" aria-label="Mark VisionQuest watched">✓</button><button class="skip" aria-label="Skip title">✕</button></div>
+    <img class="poster-thumb" src="posters/visionquest.svg" alt="VisionQuest poster">
+    <div class="grow"><h2>VisionQuest</h2><p>2026 · Series · <span class="phase6">👑 Doom Approaches (P6)</span></p></div>
+    <span class="badge vital">Vital</span>
+  </div>
+  <details><summary>Details</summary>
+    <img class="poster-large" src="posters/visionquest.svg" alt="VisionQuest poster">
+    <h3>Characters</h3><div class="chips"><span data-character-link="vision">Vision</span><span data-character-link="ultron">Ultron</span><span>Thomas Shepard</span><span>F.R.I.D.A.Y.</span><span>E.D.I.T.H.</span><span>J.A.R.V.I.S.</span></div>
+    <h3>Non-spoilery summary</h3><p>Vision, rebooted and hiding after escaping those who sought to weaponize him, searches for new meaning while confronting the AI personas within his programming and a mysterious boy who may be his son.</p>
+    <h3>Doom prep note</h3><p>Vital preparation for Vision's next chapter before Doomsday. It follows directly from WandaVision, brings Ultron back into Vision's story and may clarify Vision's identity, status and relationships before the wider Avengers conflict. Runtime has not been announced.</p>
+  </details>
+</article>
+</section>
 <section id="charactersPage" hidden>
   <div class="doomsday-filter-section">
   <h3>DOOMSDAY STATUS</h3>
@@ -3720,9 +3736,10 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <span>Captain America: Civil War</span>
     <span>Avengers: Infinity War</span>
     <span>WandaVision</span>
+    <span>VisionQuest</span>
   </div>
   <h3>Doom Relevance</h3>
-  <p>Vision's importance extends far beyond his original Avengers appearances. WandaVision introduces both a recreated Vision and the White Vision, whose future remains unresolved. As one of the MCU's most unique characters, Vision sits at the intersection of artificial intelligence, identity and the consequences of the Infinity Saga. His story is expected to continue and may have significant implications for future MCU projects.</p>
+  <p>Vision's importance extends far beyond his original Avengers appearances. WandaVision introduces both a recreated Vision and the White Vision, whose future remains unresolved, while VisionQuest directly continues that story before Doomsday. As one of the MCU's most unique characters, Vision sits at the intersection of artificial intelligence, identity and the consequences of the Infinity Saga. His next chapter may have significant implications for the wider Avengers conflict.</p>
   <h3>Appears In</h3>
   <div class="chips">
     <span>Avengers: Age of Ultron</span>
@@ -3730,6 +3747,7 @@ main{padding:18px 20px} .tabs,.filters{display:grid;grid-template-columns:1fr 1f
     <span>Avengers: Infinity War</span>
     <span>Avengers: Endgame</span>
     <span>WandaVision</span>
+    <span>VisionQuest</span>
   </div>
   <h3>Watch Progress</h3>
   <p class="character-progress">0 / 5 titles</p>
@@ -4908,6 +4926,7 @@ function save(){
 }
 
 function formatRuntime(minutes){
+  if(!minutes) return 'Not announced';
   const h=Math.floor(minutes/60);
   const m=minutes%60;
   return `${h}h ${m}m`;
@@ -5226,7 +5245,7 @@ qs('refreshTracker').onclick=()=>{
   window.location.replace(url.toString());
 };
 
-qs('trackerVersion').textContent='29 Aug 2026';
+qs('trackerVersion').textContent='26 Sep 2026';
 
 
 characterButtons.forEach(button=>{
